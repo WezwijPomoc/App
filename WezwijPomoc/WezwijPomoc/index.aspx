@@ -1,5 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WezwijPomoc.index" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" CodeBehind="index.aspx.cs" Inherits="WezwijPomoc.index" %>
+<<%@ Import Namespace="WezwijPomoc" %>
+<<%@ Import Namespace="System.Diagnostics" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -23,6 +24,17 @@
 
         <!-- Formularz wypełniany przez użytkownika -->
         <div>
+            <script runat="server">
+                
+
+                protected async void Page_Load(object sender, EventArgs e)
+                    {
+                    SMSCodeGenerator generator = new SMSCodeGenerator();
+                    var res = await generator.GetSMSCode();
+                    Debug.Write(res);
+                    test.Text = res;
+                 }
+            </script>
             <asp:Table ID="Table1" runat="server" Width="382px" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
@@ -92,8 +104,10 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton" runat="server" Text="Wyślij zgłoszenie" />
+                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" />
+                        <asp:Label ID="test" runat="server" />
                     </asp:TableCell>
+                    
                 </asp:TableRow>
             </asp:Table>
         </div>
