@@ -10,7 +10,7 @@
     <title>Wezwij Pomoc</title>
 
     <!-- poniższy skrypt nie działa jeszcze -->
-    <script language="C#" runat="server"> 
+    <script language="C#" runat="server">   
 
         void zmianaKimJestesRadioButtonList(object Source, EventArgs e)
         {
