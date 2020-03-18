@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieBatalion.aspx.cs" Inherits="WezwijPomoc.LogowanieBatalion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieWOT.aspx.cs" Inherits="WezwijPomoc.LogowanieBatalion" %>
 
 <!DOCTYPE html>
 
