@@ -75,3 +75,34 @@ C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.cs
 C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.csproj.CopyComplete
 C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.dll
 C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.pdb
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\WezwijPomoc.dll.config
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\WezwijPomoc.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\WezwijPomoc.pdb
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Antlr3.Runtime.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Newtonsoft.Json.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\System.Web.Optimization.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\WebGrease.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\System.Web.Optimization.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Newtonsoft.Json.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Antlr3.Runtime.pdb
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\pl\System.Web.Optimization.resources.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\pl\Microsoft.AspNet.FriendlyUrls.resources.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.csprojAssemblyReference.cache
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.csproj.CoreCompileInputs.cache
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.csproj.CopyComplete
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.pdb
