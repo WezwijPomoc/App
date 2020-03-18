@@ -85,24 +85,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator imieRequiredFieldValidator;
         
         /// <summary>
-        /// kimJesteslLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label kimJesteslLabel;
-        
-        /// <summary>
-        /// kimJestesRadioButtonList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList kimJestesRadioButtonList;
-        
-        /// <summary>
         /// peselLabel control.
         /// </summary>
         /// <remarks>
@@ -137,6 +119,33 @@ namespace WezwijPomoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator peselRegularExpressionValidator;
+        
+        /// <summary>
+        /// regonLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label regonLabel;
+        
+        /// <summary>
+        /// regonTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox regonTextBox;
+        
+        /// <summary>
+        /// regonRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator regonRequiredFieldValidator;
         
         /// <summary>
         /// numerTelefonuLabel control.
