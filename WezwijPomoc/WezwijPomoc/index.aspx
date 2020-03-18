@@ -84,10 +84,11 @@
                         <asp:Label ID="miejscowoscLabel" runat="server" Text="Miejscowość"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="miejscowoscTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="miejscowoscTextBox" runat="server" ></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="miejscowoscRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="miejscowoscRegularExpressionValidator" runat="server" ValidationExpression="(([a-zA-Z]{3,32}(\s|-){1}[a-zA-Z]{3,32})|([a-zA-Z]{3,32}))" ErrorMessage="Max dlugosc 30 znaków" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
