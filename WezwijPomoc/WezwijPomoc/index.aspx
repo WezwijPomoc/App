@@ -3,10 +3,23 @@
 <<%@ Import Namespace="System.Diagnostics" %>
 <!DOCTYPE html>
 
+  
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
+    <title>Wezwij Pomoc</title>
+
+    <!-- poniższy skrypt nie działa jeszcze -->
+    <script language="C#" runat="server">   
+
+        void zmianaKimJestesRadioButtonList(object Source, EventArgs e)
+        {
+            kimJesteslLabel.Text = "wychwycilem zmiane";
+        }
+
+  </script>
+        
 </head>
 <body>
     <form id="form1" runat="server">
@@ -15,8 +28,13 @@
             <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
+                        <asp:Image ID="helpImage" runat="server" ImageUrl="~/img/help.gif"/>
+                    </asp:TableCell>
+                 </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableCell>
                          <asp:Label ID="naglowekLabel" runat="server" Text="FORMULARZ UŻYTKOWNIKA" Font-Size="Large" Font-Bold="True"></asp:Label>
-                     </asp:TableCell>
+                    </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
         </div>
@@ -49,7 +67,20 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="peselLabel" runat="server" Text="Pesel"></asp:Label>
+                        <asp:Label ID="kimJesteslLabel" runat="server" Text="Kim jesteś"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:RadioButtonList ID="kimJestesRadioButtonList" runat="server" OnSelectedIndexChanged="zmianaKimJestesRadioButtonList" >
+                            <asp:ListItem>Pesel</asp:ListItem>
+                            <asp:ListItem>Regon</asp:ListItem>
+                        </asp:RadioButtonList>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="peselLabel" runat="server" Text="Pesel/Regon"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                          <asp:TextBox ID="peselTextBox" runat="server"></asp:TextBox>
@@ -96,10 +127,19 @@
                         <asp:Label ID="miejscowoscLabel" runat="server" Text="Miejscowość"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="miejscowoscTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="miejscowoscTextBox" runat="server" ></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="miejscowoscRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="miejscowoscRegularExpressionValidator" runat="server" ValidationExpression="(([a-zA-Z]{3,32}(\s|-){1}[a-zA-Z]{3,32})|([a-zA-Z]{3,32}))" ErrorMessage="Max dlugosc 30 znaków" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="adresLabel" runat="server" Text="Adres"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="adresTextBox" runat="server"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -110,9 +150,12 @@
                     
                 </asp:TableRow>
             </asp:Table>
-        </div>
+        </div> 
 
 
     </form>
 </body>
+
+  
+    
 </html>
