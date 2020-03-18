@@ -11,7 +11,7 @@
         <div>
             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
                 <asp:TableRow>
-                    <asp:TableCell>
+                    <asp:TableCell> 
                         <asp:Label ID="Label" runat="server" Text="Weryfikacja" Font-Size="Large" Font-Bold="True"></asp:Label>
                     </asp:TableCell>
                 </asp:TableRow>
