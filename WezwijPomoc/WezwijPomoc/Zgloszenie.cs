@@ -28,7 +28,6 @@ namespace WezwijPomoc
         public int id_uzytkownika_zgl { get; set; }
         public Nullable<int> id_uzytkownika_przyjm { get; set; }
     
-        public virtual Adres Adres { get; set; }
         public virtual Instytucja Instytucja { get; set; }
         public virtual Instytucja Instytucja1 { get; set; }
         public virtual Osoba Osoba { get; set; }

@@ -26,8 +26,12 @@ namespace WezwijPomoc
         public string nazwa_instytucji { get; set; }
         public string kod_pocztowy { get; set; }
         public Nullable<int> typ_instytucji { get; set; }
+        public string wojewodztwo { get; set; }
+        public string adres { get; set; }
+        public string telefon { get; set; }
+        public string fax { get; set; }
+        public string mail { get; set; }
     
-        public virtual Adres Adres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

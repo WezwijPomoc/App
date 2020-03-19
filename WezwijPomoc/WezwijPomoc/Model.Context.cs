@@ -9,27 +9,20 @@
 
 namespace WezwijPomoc
 {
-    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    using WezwijPomoc.Models;
-
-    public partial class Entities : DbContext
+    
+    public partial class Entities1 : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Entities1()
+            : base("name=Entities1")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
-           // modelBuilder.HasDefaultSchema("dbo");
-            modelBuilder.Entity<ApplicationUser>().ToTable("AspNetUser","dbo");
-            modelBuilder.Entity<IdentityUserRole>().ToTable("AspNetUserRoles");
-            modelBuilder.Entity<IdentityUserLogin>().ToTable("AspNetUserLogins");
-            modelBuilder.Entity<IdentityUserClaim>().ToTable("AspNetUserClaims");
+            throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Adres> Adres { get; set; }

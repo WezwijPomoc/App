@@ -7,12 +7,13 @@
       <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adres">
           <Key>
-            <PropertyRef Name="kod_pocztowy" />
+            <PropertyRef Name="id_adresu" />
           </Key>
-          <Property Name="kod_pocztowy" Type="nchar" MaxLength="6" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="miejscowosc" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="powiat" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="wojewodztwo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="powiat" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="id_adresu" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -70,9 +71,14 @@
             <PropertyRef Name="id_instytucji" />
           </Key>
           <Property Name="id_instytucji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="nazwa_instytucji" Type="nchar" MaxLength="10" />
+          <Property Name="nazwa_instytucji" Type="nvarchar(max)" />
           <Property Name="kod_pocztowy" Type="nchar" MaxLength="6" />
           <Property Name="typ_instytucji" Type="int" />
+          <Property Name="wojewodztwo" Type="nvarchar" MaxLength="50" />
+          <Property Name="adres" Type="nvarchar" MaxLength="50" />
+          <Property Name="telefon" Type="nchar" MaxLength="15" />
+          <Property Name="fax" Type="nchar" MaxLength="15" />
+          <Property Name="mail" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Osoba">
           <Key>
@@ -124,18 +130,6 @@
           <Property Name="id_uzytkownika_zgl" Type="int" Nullable="false" />
           <Property Name="id_uzytkownika_przyjm" Type="int" />
         </EntityType>
-        <Association Name="FK_adres">
-          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
-          <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Adres">
-              <PropertyRef Name="kod_pocztowy" />
-            </Principal>
-            <Dependent Role="Instytucja">
-              <PropertyRef Name="kod_pocztowy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -216,18 +210,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_kod_pocztowy">
-          <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
-          <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Adres">
-              <PropertyRef Name="kod_pocztowy" />
-            </Principal>
-            <Dependent Role="Zgloszenie">
-              <PropertyRef Name="kod_pocztowy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_osoba_do_kontaktu">
           <End Role="Osoba" Type="Self.Osoba" Multiplicity="1" />
           <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
@@ -300,10 +282,6 @@
           <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Uzytkownik" EntityType="Self.Uzytkownik" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Zgloszenie" EntityType="Self.Zgloszenie" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_adres" Association="Self.FK_adres">
-            <End Role="Adres" EntitySet="Adres" />
-            <End Role="Instytucja" EntitySet="Instytucja" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUser" EntitySet="AspNetUser" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -326,10 +304,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_instytucja_zgl" Association="Self.FK_instytucja_zgl">
             <End Role="Instytucja" EntitySet="Instytucja" />
-            <End Role="Zgloszenie" EntitySet="Zgloszenie" />
-          </AssociationSet>
-          <AssociationSet Name="FK_kod_pocztowy" Association="Self.FK_kod_pocztowy">
-            <End Role="Adres" EntitySet="Adres" />
             <End Role="Zgloszenie" EntitySet="Zgloszenie" />
           </AssociationSet>
           <AssociationSet Name="FK_osoba_do_kontaktu" Association="Self.FK_osoba_do_kontaktu">
@@ -360,14 +334,13 @@
       <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Adres">
           <Key>
-            <PropertyRef Name="kod_pocztowy" />
+            <PropertyRef Name="id_adresu" />
           </Key>
-          <Property Name="kod_pocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="miejscowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="powiat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="wojewodztwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Instytucja" Relationship="Self.FK_adres" FromRole="Adres" ToRole="Instytucja" />
-          <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_kod_pocztowy" FromRole="Adres" ToRole="Zgloszenie" />
+          <Property Name="powiat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id_adresu" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="AspNetRoles">
           <Key>
@@ -423,10 +396,14 @@
             <PropertyRef Name="id_instytucji" />
           </Key>
           <Property Name="id_instytucji" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="nazwa_instytucji" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="nazwa_instytucji" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="kod_pocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="true" />
           <Property Name="typ_instytucji" Type="Int32" />
-          <NavigationProperty Name="Adres" Relationship="Self.FK_adres" FromRole="Instytucja" ToRole="Adres" />
+          <Property Name="wojewodztwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adres" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="telefon" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="fax" Type="String" MaxLength="15" FixedLength="true" Unicode="true" />
+          <Property Name="mail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_instytucja_przyjm" FromRole="Instytucja" ToRole="Zgloszenie" />
           <NavigationProperty Name="Zgloszenie1" Relationship="Self.FK_instytucja_zgl" FromRole="Instytucja" ToRole="Zgloszenie" />
           <NavigationProperty Name="Uzytkownik" Relationship="Self.FK_Pracodawca_instytucja" FromRole="Instytucja" ToRole="Uzytkownik" />
@@ -485,7 +462,6 @@
           <Property Name="id_osoby_do_kontaktu" Type="Int32" Nullable="false" />
           <Property Name="id_uzytkownika_zgl" Type="Int32" Nullable="false" />
           <Property Name="id_uzytkownika_przyjm" Type="Int32" />
-          <NavigationProperty Name="Adres" Relationship="Self.FK_kod_pocztowy" FromRole="Zgloszenie" ToRole="Adres" />
           <NavigationProperty Name="Instytucja" Relationship="Self.FK_instytucja_przyjm" FromRole="Zgloszenie" ToRole="Instytucja" />
           <NavigationProperty Name="Instytucja1" Relationship="Self.FK_instytucja_zgl" FromRole="Zgloszenie" ToRole="Instytucja" />
           <NavigationProperty Name="Osoba" Relationship="Self.FK_osoba_do_kontaktu" FromRole="Zgloszenie" ToRole="Osoba" />
@@ -493,30 +469,6 @@
           <NavigationProperty Name="Uzytkownik" Relationship="Self.FK_uzytkownik_przyjm" FromRole="Zgloszenie" ToRole="Uzytkownik" />
           <NavigationProperty Name="Uzytkownik1" Relationship="Self.FK_uzytkownik_zgl" FromRole="Zgloszenie" ToRole="Uzytkownik" />
         </EntityType>
-        <Association Name="FK_adres">
-          <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
-          <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Adres">
-              <PropertyRef Name="kod_pocztowy" />
-            </Principal>
-            <Dependent Role="Instytucja">
-              <PropertyRef Name="kod_pocztowy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_kod_pocztowy">
-          <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
-          <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Adres">
-              <PropertyRef Name="kod_pocztowy" />
-            </Principal>
-            <Dependent Role="Zgloszenie">
-              <PropertyRef Name="kod_pocztowy" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
           <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -633,7 +585,7 @@
           <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="*" />
           <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Adres" EntityType="Self.Adres" />
           <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" />
           <EntitySet Name="AspNetUser" EntityType="Self.AspNetUser" />
@@ -644,14 +596,6 @@
           <EntitySet Name="Status" EntityType="Self.Status" />
           <EntitySet Name="Uzytkownik" EntityType="Self.Uzytkownik" />
           <EntitySet Name="Zgloszenie" EntityType="Self.Zgloszenie" />
-          <AssociationSet Name="FK_adres" Association="Self.FK_adres">
-            <End Role="Adres" EntitySet="Adres" />
-            <End Role="Instytucja" EntitySet="Instytucja" />
-          </AssociationSet>
-          <AssociationSet Name="FK_kod_pocztowy" Association="Self.FK_kod_pocztowy">
-            <End Role="Adres" EntitySet="Adres" />
-            <End Role="Zgloszenie" EntitySet="Zgloszenie" />
-          </AssociationSet>
           <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
             <End Role="AspNetUser" EntitySet="AspNetUser" />
             <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
@@ -698,14 +642,15 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
           <EntitySetMapping Name="Adres">
             <EntityTypeMapping TypeName="Model.Adres">
               <MappingFragment StoreEntitySet="Adres">
                 <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
                 <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
-                <ScalarProperty Name="powiat" ColumnName="powiat" />
                 <ScalarProperty Name="wojewodztwo" ColumnName="wojewodztwo" />
+                <ScalarProperty Name="powiat" ColumnName="powiat" />
+                <ScalarProperty Name="id_adresu" ColumnName="id_adresu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -761,6 +706,11 @@
                 <ScalarProperty Name="nazwa_instytucji" ColumnName="nazwa_instytucji" />
                 <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
                 <ScalarProperty Name="typ_instytucji" ColumnName="typ_instytucji" />
+                <ScalarProperty Name="wojewodztwo" ColumnName="wojewodztwo" />
+                <ScalarProperty Name="adres" ColumnName="adres" />
+                <ScalarProperty Name="telefon" ColumnName="telefon" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="mail" ColumnName="mail" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

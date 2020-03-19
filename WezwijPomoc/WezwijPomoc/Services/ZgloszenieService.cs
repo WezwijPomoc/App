@@ -9,7 +9,7 @@ namespace WezwijPomoc.Services
     {
         public Instytucja GetInstytucja(string kod_pocztowy)
         {
-            using (Entities db = new Entities())
+            using (Entities1 db = new Entities1())
             {
                 var addresses = db.Adres.Select(a => a).Where(b => b.kod_pocztowy == kod_pocztowy);
                 if (addresses.Count() < 1) return null;
@@ -31,7 +31,7 @@ namespace WezwijPomoc.Services
             }
             else
             {
-                using (Entities db = new Entities())
+                using (Entities1 db = new Entities1())
                 {
                     Osoba osoba = new Osoba();
                     osoba.imie = imie;
