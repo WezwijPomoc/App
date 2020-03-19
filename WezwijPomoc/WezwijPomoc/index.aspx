@@ -174,7 +174,7 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" />
+                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send"/>
                         <asp:Label ID="test" runat="server" />
                     </asp:TableCell>
                     

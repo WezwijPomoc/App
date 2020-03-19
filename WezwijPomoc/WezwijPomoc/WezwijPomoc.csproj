@@ -206,7 +206,9 @@
       <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PESELValidator.cs" />
     <Compile Include="Services\SMSCodeGenerator.cs" />
+    <Compile Include="Services\TicketService.cs" />
     <Compile Include="Status.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>

@@ -4,3 +4,5 @@
 
 /.vs
 /WezwijPomoc/.vs
+/WezwijPomoc/WezwijPomoc/bin/EntityFramework.SqlServer.xml
+/WezwijPomoc/WezwijPomoc/bin/EntityFramework.xml
