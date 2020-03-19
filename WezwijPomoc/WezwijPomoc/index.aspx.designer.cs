@@ -85,6 +85,24 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator imieRequiredFieldValidator;
         
         /// <summary>
+        /// RadioButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton1;
+        
+        /// <summary>
+        /// RadioButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton RadioButton2;
+        
+        /// <summary>
         /// peselLabel control.
         /// </summary>
         /// <remarks>
@@ -92,33 +110,6 @@ namespace WezwijPomoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label peselLabel;
-        
-        /// <summary>
-        /// peselTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox peselTextBox;
-        
-        /// <summary>
-        /// peselRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator peselRequiredFieldValidator;
-        
-        /// <summary>
-        /// peselRegularExpressionValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator peselRegularExpressionValidator;
         
         /// <summary>
         /// regonLabel control.
@@ -139,6 +130,15 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox regonTextBox;
         
         /// <summary>
+        /// peselTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox peselTextBox;
+        
+        /// <summary>
         /// regonRequiredFieldValidator control.
         /// </summary>
         /// <remarks>
@@ -146,6 +146,24 @@ namespace WezwijPomoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator regonRequiredFieldValidator;
+        
+        /// <summary>
+        /// peselRequiredFieldValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator peselRequiredFieldValidator;
+        
+        /// <summary>
+        /// peselRegularExpressionValidator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator peselRegularExpressionValidator;
         
         /// <summary>
         /// numerTelefonuLabel control.
