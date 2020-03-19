@@ -15,19 +15,25 @@ namespace WezwijPomoc
     public partial class Zgloszenie
     {
         public int id_zgloszenia { get; set; }
-        public string pesel { get; set; }
-        public string imie { get; set; }
-        public string nr_telefonu { get; set; }
-        public string kategoria_pomocy { get; set; }
+        public string zakres_wsparcia { get; set; }
+        public int priorytet { get; set; }
         public string kod_pocztowy { get; set; }
         public string adres_zgloszenia { get; set; }
-        public int id_batalionu { get; set; }
-        public int id_instytucji { get; set; }
+        public int id_instytucji_przyjm { get; set; }
+        public int id_instytucji_zgl { get; set; }
         public int id_statusu { get; set; }
+        public System.DateTime data_rozpoczecia { get; set; }
+        public System.DateTime data_wygenerowania { get; set; }
+        public int id_osoby_do_kontaktu { get; set; }
+        public int id_uzytkownika_zgl { get; set; }
+        public Nullable<int> id_uzytkownika_przyjm { get; set; }
     
         public virtual Adres Adres { get; set; }
-        public virtual Batalion Batalion { get; set; }
         public virtual Instytucja Instytucja { get; set; }
+        public virtual Instytucja Instytucja1 { get; set; }
+        public virtual Osoba Osoba { get; set; }
         public virtual Status Status { get; set; }
+        public virtual Uzytkownik Uzytkownik { get; set; }
+        public virtual Uzytkownik Uzytkownik1 { get; set; }
     }
 }

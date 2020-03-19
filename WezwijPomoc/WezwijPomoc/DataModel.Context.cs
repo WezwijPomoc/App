@@ -9,29 +9,38 @@
 
 namespace WezwijPomoc
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
-    public partial class Entities1 : DbContext
+    using WezwijPomoc.Models;
+
+    public partial class Entities : DbContext
     {
-        public Entities1()
-            : base("name=Entities1")
+        public Entities()
+            : base("name=Entities")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            base.OnModelCreating(modelBuilder);
+           // modelBuilder.HasDefaultSchema("dbo");
+            modelBuilder.Entity<ApplicationUser>().ToTable("AspNetUser","dbo");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("AspNetUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("AspNetUserLogins");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("AspNetUserClaims");
         }
     
         public virtual DbSet<Adres> Adres { get; set; }
-        public virtual DbSet<Batalion> Batalion { get; set; }
+        public virtual DbSet<AspNetRoles> AspNetRoles { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUser { get; set; }
+        public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
+        public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<Instytucja> Instytucja { get; set; }
+        public virtual DbSet<Osoba> Osoba { get; set; }
         public virtual DbSet<Status> Status { get; set; }
-        public virtual DbSet<Ticket> Ticket { get; set; }
-        public virtual DbSet<Uzytkownik_batalion> Uzytkownik_batalion { get; set; }
-        public virtual DbSet<Uzytkownik_instytucja> Uzytkownik_instytucja { get; set; }
+        public virtual DbSet<Uzytkownik> Uzytkownik { get; set; }
         public virtual DbSet<Zgloszenie> Zgloszenie { get; set; }
     }
 }

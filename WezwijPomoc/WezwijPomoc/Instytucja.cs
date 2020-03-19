@@ -18,15 +18,21 @@ namespace WezwijPomoc
         public Instytucja()
         {
             this.Zgloszenie = new HashSet<Zgloszenie>();
-            this.Adres = new HashSet<Adres>();
+            this.Zgloszenie1 = new HashSet<Zgloszenie>();
+            this.Uzytkownik = new HashSet<Uzytkownik>();
         }
     
         public int id_instytucji { get; set; }
         public string nazwa_instytucji { get; set; }
+        public string kod_pocztowy { get; set; }
+        public Nullable<int> typ_instytucji { get; set; }
     
+        public virtual Adres Adres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Adres> Adres { get; set; }
+        public virtual ICollection<Zgloszenie> Zgloszenie1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Uzytkownik> Uzytkownik { get; set; }
     }
 }

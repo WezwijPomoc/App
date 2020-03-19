@@ -156,3 +156,22 @@ C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.dll
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.xml
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.xml
+C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.dll
+C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.dll
+C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.xml
+C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Owin.dll
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\filip\source\repos\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.OAuth.xml

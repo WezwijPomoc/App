@@ -12,15 +12,21 @@ namespace WezwijPomoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Uzytkownik_batalion
+    public partial class Osoba
     {
-        public string login { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Osoba()
+        {
+            this.Zgloszenie = new HashSet<Zgloszenie>();
+        }
+    
+        public int id_osoby { get; set; }
         public string imie { get; set; }
         public string nazwisko { get; set; }
-        public string numer_telefonu { get; set; }
-        public int id_batalionu { get; set; }
-        public string haslo { get; set; }
+        public string telefon { get; set; }
+        public string mail { get; set; }
     
-        public virtual Batalion Batalion { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
     }
 }

@@ -12,12 +12,13 @@ namespace WezwijPomoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Ticket
+    public partial class AspNetUserClaims
     {
-        public int id_ticketu { get; set; }
-        public string nr_telefonu { get; set; }
-        public Nullable<System.DateTime> data_zgloszenia { get; set; }
-        public string kod_sms { get; set; }
-        public string ip { get; set; }
+        public int Id { get; set; }
+        public string UserId { get; set; }
+        public string ClaimType { get; set; }
+        public string ClaimValue { get; set; }
+    
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }

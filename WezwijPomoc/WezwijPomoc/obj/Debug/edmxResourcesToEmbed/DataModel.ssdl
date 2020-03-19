@@ -8,29 +8,76 @@
     <Property Name="miejscowosc" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="powiat" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="wojewodztwo" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="batalion_odpowiedzialny" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="Batalion">
+  <EntityType Name="AspNetRoles">
     <Key>
-      <PropertyRef Name="id_batalionu" />
+      <PropertyRef Name="Id" />
     </Key>
-    <Property Name="id_batalionu" Type="int" Nullable="false" />
-    <Property Name="nazwa_brygady" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserClaims">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AspNetUserLogins">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AspNetUserRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="RoleId" Type="nvarchar" MaxLength="128" Nullable="false" />
   </EntityType>
   <EntityType Name="Instytucja">
     <Key>
       <PropertyRef Name="id_instytucji" />
     </Key>
-    <Property Name="id_instytucji" Type="int" Nullable="false" />
+    <Property Name="id_instytucji" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nazwa_instytucji" Type="nchar" MaxLength="10" />
+    <Property Name="kod_pocztowy" Type="nchar" MaxLength="6" />
+    <Property Name="typ_instytucji" Type="int" />
   </EntityType>
-  <EntityType Name="Obszar_instytucji">
+  <EntityType Name="Osoba">
     <Key>
-      <PropertyRef Name="id_instytucji" />
-      <PropertyRef Name="kod_pocztowy" />
+      <PropertyRef Name="id_osoby" />
     </Key>
-    <Property Name="id_instytucji" Type="int" Nullable="false" />
-    <Property Name="kod_pocztowy" Type="nchar" MaxLength="6" Nullable="false" />
+    <Property Name="id_osoby" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="imie" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="nazwisko" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="30" Nullable="false" />
   </EntityType>
   <EntityType Name="Status">
     <Key>
@@ -39,98 +86,128 @@
     <Property Name="id_statusu" Type="int" Nullable="false" />
     <Property Name="nazwa" Type="nchar" MaxLength="10" />
   </EntityType>
-  <EntityType Name="Ticket">
+  <EntityType Name="Uzytkownik">
     <Key>
-      <PropertyRef Name="id_ticketu" />
-    </Key>
-    <Property Name="id_ticketu" Type="int" Nullable="false" />
-    <Property Name="nr_telefonu" Type="nvarchar" MaxLength="15" />
-    <Property Name="data_zgloszenia" Type="datetime" />
-    <Property Name="kod_sms" Type="nvarchar" MaxLength="6" />
-    <Property Name="ip" Type="nvarchar" MaxLength="16" />
-  </EntityType>
-  <EntityType Name="Uzytkownik_batalion">
-    <Key>
-      <PropertyRef Name="login" />
+      <PropertyRef Name="id_uzytkownika" />
     </Key>
     <Property Name="login" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="imie" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="nazwisko" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="numer_telefonu" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="id_batalionu" Type="int" Nullable="false" />
-    <Property Name="haslo" Type="nvarchar(max)" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Uzytkownik_instytucja">
-    <Key>
-      <PropertyRef Name="login" />
-    </Key>
-    <Property Name="login" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="imie" Type="nvarchar" MaxLength="30" />
-    <Property Name="nazwisko" Type="nvarchar" MaxLength="50" />
     <Property Name="numer_telefonu" Type="nvarchar" MaxLength="15" />
-    <Property Name="id_instytucji" Type="int" />
-    <Property Name="haslo" Type="nvarchar(max)" />
+    <Property Name="haslo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="rola" Type="int" Nullable="false" />
+    <Property Name="id_instytucji" Type="int" Nullable="false" />
+    <Property Name="id_uzytkownika" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="status" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Zgloszenie">
     <Key>
       <PropertyRef Name="id_zgloszenia" />
     </Key>
-    <Property Name="id_zgloszenia" Type="int" Nullable="false" />
-    <Property Name="pesel" Type="nchar" MaxLength="11" Nullable="false" />
-    <Property Name="imie" Type="nvarchar" MaxLength="20" Nullable="false" />
-    <Property Name="nr_telefonu" Type="nvarchar" MaxLength="15" Nullable="false" />
-    <Property Name="kategoria_pomocy" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="id_zgloszenia" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="zakres_wsparcia" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="priorytet" Type="int" Nullable="false" />
     <Property Name="kod_pocztowy" Type="nchar" MaxLength="6" Nullable="false" />
     <Property Name="adres_zgloszenia" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="id_batalionu" Type="int" Nullable="false" />
-    <Property Name="id_instytucji" Type="int" Nullable="false" />
+    <Property Name="id_instytucji_przyjm" Type="int" Nullable="false" />
+    <Property Name="id_instytucji_zgl" Type="int" Nullable="false" />
     <Property Name="id_statusu" Type="int" Nullable="false" />
+    <Property Name="data_rozpoczecia" Type="datetime" Nullable="false" />
+    <Property Name="data_wygenerowania" Type="datetime" Nullable="false" />
+    <Property Name="id_osoby_do_kontaktu" Type="int" Nullable="false" />
+    <Property Name="id_uzytkownika_zgl" Type="int" Nullable="false" />
+    <Property Name="id_uzytkownika_przyjm" Type="int" />
   </EntityType>
-  <Association Name="FK_batalionu">
-    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
-    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Batalion">
-        <PropertyRef Name="id_batalionu" />
-      </Principal>
-      <Dependent Role="Zgloszenie">
-        <PropertyRef Name="id_batalionu" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_instytucja">
-    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
-    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Instytucja">
-        <PropertyRef Name="id_instytucji" />
-      </Principal>
-      <Dependent Role="Zgloszenie">
-        <PropertyRef Name="id_instytucji" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_intersekcja_id_instytucji">
-    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
-    <End Role="Obszar_instytucji" Type="Self.Obszar_instytucji" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Instytucja">
-        <PropertyRef Name="id_instytucji" />
-      </Principal>
-      <Dependent Role="Obszar_instytucji">
-        <PropertyRef Name="id_instytucji" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_intersekcja_kod_pocztowy">
-    <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
-    <End Role="Obszar_instytucji" Type="Self.Obszar_instytucji" Multiplicity="*" />
+  <Association Name="FK_adres">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="0..1" />
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Adres">
         <PropertyRef Name="kod_pocztowy" />
       </Principal>
-      <Dependent Role="Obszar_instytucji">
+      <Dependent Role="Instytucja">
         <PropertyRef Name="kod_pocztowy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserClaims" Type="Self.AspNetUserClaims" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserClaims">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserLogins" Type="Self.AspNetUserLogins" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserLogins">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+    <End Role="AspNetRoles" Type="Self.AspNetRoles" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetRoles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+    <End Role="AspNetUser" Type="Self.AspNetUser" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AspNetUserRoles" Type="Self.AspNetUserRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AspNetUser">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AspNetUserRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instytucja_przyjm">
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instytucja">
+        <PropertyRef Name="id_instytucji" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_instytucji_przyjm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instytucja_zgl">
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instytucja">
+        <PropertyRef Name="id_instytucji" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_instytucji_zgl" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -146,27 +223,27 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Odpowiedzialnosc_batalionu">
-    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
-    <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+  <Association Name="FK_osoba_do_kontaktu">
+    <End Role="Osoba" Type="Self.Osoba" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Batalion">
-        <PropertyRef Name="id_batalionu" />
+      <Principal Role="Osoba">
+        <PropertyRef Name="id_osoby" />
       </Principal>
-      <Dependent Role="Adres">
-        <PropertyRef Name="batalion_odpowiedzialny" />
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_osoby_do_kontaktu" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Pracodawca_batalion">
-    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
-    <End Role="Uzytkownik_batalion" Type="Self.Uzytkownik_batalion" Multiplicity="*" />
+  <Association Name="FK_Pracodawca_instytucja">
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
+    <End Role="Uzytkownik" Type="Self.Uzytkownik" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Batalion">
-        <PropertyRef Name="id_batalionu" />
+      <Principal Role="Instytucja">
+        <PropertyRef Name="id_instytucji" />
       </Principal>
-      <Dependent Role="Uzytkownik_batalion">
-        <PropertyRef Name="id_batalionu" />
+      <Dependent Role="Uzytkownik">
+        <PropertyRef Name="id_instytucji" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -182,46 +259,92 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_uzytkownik_przyjm">
+    <End Role="Uzytkownik" Type="Self.Uzytkownik" Multiplicity="0..1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uzytkownik">
+        <PropertyRef Name="id_uzytkownika" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_uzytkownika_przyjm" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_uzytkownik_zgl">
+    <End Role="Uzytkownik" Type="Self.Uzytkownik" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Uzytkownik">
+        <PropertyRef Name="id_uzytkownika" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_uzytkownika_zgl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Adres" EntityType="Self.Adres" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Batalion" EntityType="Self.Batalion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetRoles" EntityType="Self.AspNetRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUser" EntityType="Self.AspNetUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserClaims" EntityType="Self.AspNetUserClaims" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserLogins" EntityType="Self.AspNetUserLogins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AspNetUserRoles" EntityType="Self.AspNetUserRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Instytucja" EntityType="Self.Instytucja" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Obszar_instytucji" EntityType="Self.Obszar_instytucji" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Osoba" EntityType="Self.Osoba" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Ticket" EntityType="Self.Ticket" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Uzytkownik_batalion" EntityType="Self.Uzytkownik_batalion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Uzytkownik_instytucja" EntityType="Self.Uzytkownik_instytucja" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Uzytkownik" EntityType="Self.Uzytkownik" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Zgloszenie" EntityType="Self.Zgloszenie" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_batalionu" Association="Self.FK_batalionu">
-      <End Role="Batalion" EntitySet="Batalion" />
-      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
-    </AssociationSet>
-    <AssociationSet Name="FK_instytucja" Association="Self.FK_instytucja">
-      <End Role="Instytucja" EntitySet="Instytucja" />
-      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
-    </AssociationSet>
-    <AssociationSet Name="FK_intersekcja_id_instytucji" Association="Self.FK_intersekcja_id_instytucji">
-      <End Role="Instytucja" EntitySet="Instytucja" />
-      <End Role="Obszar_instytucji" EntitySet="Obszar_instytucji" />
-    </AssociationSet>
-    <AssociationSet Name="FK_intersekcja_kod_pocztowy" Association="Self.FK_intersekcja_kod_pocztowy">
+    <AssociationSet Name="FK_adres" Association="Self.FK_adres">
       <End Role="Adres" EntitySet="Adres" />
-      <End Role="Obszar_instytucji" EntitySet="Obszar_instytucji" />
+      <End Role="Instytucja" EntitySet="Instytucja" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUser" />
+      <End Role="AspNetUserClaims" EntitySet="AspNetUserClaims" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUser" />
+      <End Role="AspNetUserLogins" EntitySet="AspNetUserLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetRoles_RoleId">
+      <End Role="AspNetRoles" EntitySet="AspNetRoles" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId" Association="Self.FK_dbo_AspNetUserRoles_dbo_AspNetUsers_UserId">
+      <End Role="AspNetUser" EntitySet="AspNetUser" />
+      <End Role="AspNetUserRoles" EntitySet="AspNetUserRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instytucja_przyjm" Association="Self.FK_instytucja_przyjm">
+      <End Role="Instytucja" EntitySet="Instytucja" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instytucja_zgl" Association="Self.FK_instytucja_zgl">
+      <End Role="Instytucja" EntitySet="Instytucja" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
     </AssociationSet>
     <AssociationSet Name="FK_kod_pocztowy" Association="Self.FK_kod_pocztowy">
       <End Role="Adres" EntitySet="Adres" />
       <End Role="Zgloszenie" EntitySet="Zgloszenie" />
     </AssociationSet>
-    <AssociationSet Name="FK_Odpowiedzialnosc_batalionu" Association="Self.FK_Odpowiedzialnosc_batalionu">
-      <End Role="Batalion" EntitySet="Batalion" />
-      <End Role="Adres" EntitySet="Adres" />
+    <AssociationSet Name="FK_osoba_do_kontaktu" Association="Self.FK_osoba_do_kontaktu">
+      <End Role="Osoba" EntitySet="Osoba" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
     </AssociationSet>
-    <AssociationSet Name="FK_Pracodawca_batalion" Association="Self.FK_Pracodawca_batalion">
-      <End Role="Batalion" EntitySet="Batalion" />
-      <End Role="Uzytkownik_batalion" EntitySet="Uzytkownik_batalion" />
+    <AssociationSet Name="FK_Pracodawca_instytucja" Association="Self.FK_Pracodawca_instytucja">
+      <End Role="Instytucja" EntitySet="Instytucja" />
+      <End Role="Uzytkownik" EntitySet="Uzytkownik" />
     </AssociationSet>
     <AssociationSet Name="FK_status" Association="Self.FK_status">
       <End Role="Status" EntitySet="Status" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uzytkownik_przyjm" Association="Self.FK_uzytkownik_przyjm">
+      <End Role="Uzytkownik" EntitySet="Uzytkownik" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_uzytkownik_zgl" Association="Self.FK_uzytkownik_zgl">
+      <End Role="Uzytkownik" EntitySet="Uzytkownik" />
       <End Role="Zgloszenie" EntitySet="Zgloszenie" />
     </AssociationSet>
   </EntityContainer>

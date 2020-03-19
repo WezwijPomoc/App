@@ -12,24 +12,30 @@ namespace WezwijPomoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Batalion
+    public partial class Uzytkownik
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Batalion()
+        public Uzytkownik()
         {
-            this.Adres = new HashSet<Adres>();
             this.Zgloszenie = new HashSet<Zgloszenie>();
-            this.Uzytkownik_batalion = new HashSet<Uzytkownik_batalion>();
+            this.Zgloszenie1 = new HashSet<Zgloszenie>();
         }
     
-        public int id_batalionu { get; set; }
-        public string nazwa_brygady { get; set; }
+        public string login { get; set; }
+        public string imie { get; set; }
+        public string nazwisko { get; set; }
+        public string numer_telefonu { get; set; }
+        public string haslo { get; set; }
+        public string mail { get; set; }
+        public int rola { get; set; }
+        public int id_instytucji { get; set; }
+        public int id_uzytkownika { get; set; }
+        public int status { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Adres> Adres { get; set; }
+        public virtual Instytucja Instytucja { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Uzytkownik_batalion> Uzytkownik_batalion { get; set; }
+        public virtual ICollection<Zgloszenie> Zgloszenie1 { get; set; }
     }
 }

@@ -17,20 +17,18 @@ namespace WezwijPomoc
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Adres()
         {
-            this.Zgloszenie = new HashSet<Zgloszenie>();
             this.Instytucja = new HashSet<Instytucja>();
+            this.Zgloszenie = new HashSet<Zgloszenie>();
         }
     
         public string kod_pocztowy { get; set; }
         public string miejscowosc { get; set; }
         public string powiat { get; set; }
         public string wojewodztwo { get; set; }
-        public int batalion_odpowiedzialny { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
-        public virtual Batalion Batalion { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Instytucja> Instytucja { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
     }
 }
