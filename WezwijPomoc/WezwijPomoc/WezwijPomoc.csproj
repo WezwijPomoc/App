@@ -133,7 +133,12 @@
     <Content Include="Global.asax" />
     <Content Include="img\help.gif" />
     <Content Include="index.aspx" />
+    <Content Include="LogowanieInstytucja.aspx" />
+    <Content Include="LogowanieWOT.aspx" />
+    <Content Include="PanelUzytkownikaInstytucja.aspx" />
+    <Content Include="PanelUzytkownikaWOT.aspx" />
     <Content Include="Web.config" />
+    <Content Include="Weryfikacja.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adres.cs">
@@ -172,7 +177,36 @@
     <Compile Include="Instytucja.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="LogowanieInstytucja.aspx.cs">
+      <DependentUpon>LogowanieInstytucja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogowanieInstytucja.aspx.designer.cs">
+      <DependentUpon>LogowanieInstytucja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogowanieWOT.aspx.cs">
+      <DependentUpon>LogowanieWOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogowanieWOT.aspx.designer.cs">
+      <DependentUpon>LogowanieWOT.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PanelUzytkownikaInstytucja.aspx.cs">
+      <DependentUpon>PanelUzytkownikaInstytucja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelUzytkownikaInstytucja.aspx.designer.cs">
+      <DependentUpon>PanelUzytkownikaInstytucja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PanelUzytkownikaWOT.aspx.cs">
+      <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelUzytkownikaWOT.aspx.designer.cs">
+      <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\PESELValidator.cs" />
     <Compile Include="Services\SMSCodeGenerator.cs" />
     <Compile Include="Services\TicketService.cs" />
     <Compile Include="Status.cs">
@@ -186,6 +220,13 @@
     </Compile>
     <Compile Include="Uzytkownik_instytucja.cs">
       <DependentUpon>DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Weryfikacja.aspx.cs">
+      <DependentUpon>Weryfikacja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Weryfikacja.aspx.designer.cs">
+      <DependentUpon>Weryfikacja.aspx</DependentUpon>
     </Compile>
     <Compile Include="Zgloszenie.cs">
       <DependentUpon>DataModel.tt</DependentUpon>

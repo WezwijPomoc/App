@@ -152,7 +152,7 @@ C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\roslyn\vbc.exe.c
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\roslyn\vbc.rsp
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\roslyn\VBCSCompiler.exe
 C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\roslyn\VBCSCompiler.exe.config
-C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.dll
-C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.dll
-C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.xml
-C:\Users\filip\Source\Repos\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.dll
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.xml
+C:\Users\kursant CCNA\Documents\App\WezwijPomoc\WezwijPomoc\bin\EntityFramework.SqlServer.xml

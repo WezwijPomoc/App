@@ -10,16 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Wezwij Pomoc</title>
 
-    <!-- poniższy skrypt nie działa jeszcze -->
-    <script language="C#" runat="server">   
-
-        void zmianaKimJestesRadioButtonList(object Source, EventArgs e)
-        {
-            kimJesteslLabel.Text = "wychwycilem zmiane";
-        }
-
-  </script>
-        
+  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,7 +33,11 @@
 
         <!-- Formularz wypełniany przez użytkownika -->
         <div>
+            <script runat="server">
+                
 
+             
+            </script>
             <asp:Table ID="Table1" runat="server" Width="382px" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
@@ -57,20 +52,7 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="kimJesteslLabel" runat="server" Text="Kim jesteś"></asp:Label>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:RadioButtonList ID="kimJestesRadioButtonList" runat="server" OnSelectedIndexChanged="zmianaKimJestesRadioButtonList" >
-                            <asp:ListItem>Pesel</asp:ListItem>
-                            <asp:ListItem>Regon</asp:ListItem>
-                        </asp:RadioButtonList>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="peselLabel" runat="server" Text="Pesel/Regon"></asp:Label>
+                        <asp:Label ID="peselLabel" runat="server" Text="Pesel"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
                          <asp:TextBox ID="peselTextBox" runat="server"></asp:TextBox>
@@ -78,6 +60,17 @@
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="peselRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="peselTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="peselRegularExpressionValidator" ValidationExpression="^\d{11}" runat="server" ErrorMessage="Wymagany format ccccccccccc" ControlToValidate="peselTextBox" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="regonLabel" runat="server" Text="Regon"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="regonTextBox" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:RequiredFieldValidator ID="regonRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="regonTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -134,7 +127,7 @@
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" />
+                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send"/>
                         <asp:Label ID="test" runat="server" />
                     </asp:TableCell>
                     
