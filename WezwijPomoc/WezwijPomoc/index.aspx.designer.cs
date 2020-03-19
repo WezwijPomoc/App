@@ -67,15 +67,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.Label zakresWsparciaLabel;
         
         /// <summary>
-        /// zakresWsparciaTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox zakresWsparciaTextBox;
-        
-        /// <summary>
         /// odKiedyLabel control.
         /// </summary>
         /// <remarks>
@@ -182,15 +173,6 @@ namespace WezwijPomoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label rejonDzialaniaLabel;
-        
-        /// <summary>
-        /// rejonDzialaniaTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox rejonDzialaniaTextBox;
         
         /// <summary>
         /// osobaDoKontaktowLabel control.

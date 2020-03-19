@@ -64,8 +64,8 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
-                    <asp:TextBox ID="zakresWsparciaTextBox" runat="server" Height="100"></asp:TextBox>
-                </asp:TableCell>
+                    <textarea id="zakresWsparciaTextArea" rows="4" cols="30"></textarea>
+                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
@@ -80,6 +80,7 @@
                     <asp:TextBox ID="rokTextBox" runat="server"></asp:TextBox>
                 </asp:TableCell>
             </asp:TableRow>
+           
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Label ID="miesiacLabel" runat="server" Text="Miesiąc"></asp:Label>
@@ -106,7 +107,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
-                    <asp:Label ID="priorytetLabel" runat="server" Text="Priorytet"></asp:Label>
+                    <asp:Label ID="priorytetLabel" runat="server" Text="PRIORYTET"></asp:Label>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -125,7 +126,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell HorizontalAlign="Center"  ColumnSpan="2" >
-                    <asp:TextBox ID="rejonDzialaniaTextBox" runat="server" Rows="4" Height="100"></asp:TextBox>
+                    <textarea id="rejonDzialaniaTextArea" rows="4" cols="30"></textarea>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -167,16 +168,16 @@
             </asp:TableRow>
               <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send"/>
+                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send" />
                         <asp:Label ID="test" runat="server" />
                     </asp:TableCell>
-                    
                 </asp:TableRow>
         </asp:Table>
         </div>
         
         <br />
         <br />
+         
         <!-- Formularz wypełniany przez użytkownika -->
         <div>
             <script runat="server">

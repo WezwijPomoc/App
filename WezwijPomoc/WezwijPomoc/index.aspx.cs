@@ -13,9 +13,12 @@ namespace WezwijPomoc
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             TicketService ticketService = new TicketService();
             ticketService.CreateTicket("123456", "531969568");
+            
         }
+        
         bool ValidatePesel()
         {
             string pesel = peselTextBox.Text;
@@ -99,5 +102,6 @@ namespace WezwijPomoc
             String adres_zgloszenia = miejscowoscTextBox.ToString() + " " + adresTextBox.ToString();
             zgloszenieService.CreateZgloszenie(peselTextBox.ToString(), imieTextBox.ToString(), numerTelefonuTextBox.ToString(), kategoriaPomocyDropDownList.ToString(), kodPocztowyTextBox.ToString(), adres_zgloszenia);
         }
+        
     }
 }
