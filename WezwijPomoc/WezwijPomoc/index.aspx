@@ -16,8 +16,8 @@
 <body>
     <form id="form1" runat="server">
         <!-- nagłówek -->
-        <div>
-            <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
+        <div >
+            <asp:Table ID="Table2" CssClass="tabelka" runat="server" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
                         <asp:Image ID="helpImage"  Visible="false" runat="server" ImageUrl="~/img/help.gif"/>

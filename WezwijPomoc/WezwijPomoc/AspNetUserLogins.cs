@@ -12,13 +12,12 @@ namespace WezwijPomoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Uzytkownik_instytucja
+    public partial class AspNetUserLogins
     {
-        public string login { get; set; }
-        public string imie { get; set; }
-        public string nazwisko { get; set; }
-        public string numer_telefonu { get; set; }
-        public Nullable<int> id_instytucji { get; set; }
-        public string haslo { get; set; }
+        public string LoginProvider { get; set; }
+        public string ProviderKey { get; set; }
+        public string UserId { get; set; }
+    
+        public virtual AspNetUser AspNetUser { get; set; }
     }
 }
