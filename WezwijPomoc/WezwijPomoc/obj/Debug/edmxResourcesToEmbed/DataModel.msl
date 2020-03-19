@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Entities1">
+    <EntitySetMapping Name="Adres">
+      <EntityTypeMapping TypeName="Model.Adres">
+        <MappingFragment StoreEntitySet="Adres">
+          <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+          <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
+          <ScalarProperty Name="powiat" ColumnName="powiat" />
+          <ScalarProperty Name="wojewodztwo" ColumnName="wojewodztwo" />
+          <ScalarProperty Name="batalion_odpowiedzialny" ColumnName="batalion_odpowiedzialny" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Batalion">
+      <EntityTypeMapping TypeName="Model.Batalion">
+        <MappingFragment StoreEntitySet="Batalion">
+          <ScalarProperty Name="id_batalionu" ColumnName="id_batalionu" />
+          <ScalarProperty Name="nazwa_brygady" ColumnName="nazwa_brygady" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Instytucja">
+      <EntityTypeMapping TypeName="Model.Instytucja">
+        <MappingFragment StoreEntitySet="Instytucja">
+          <ScalarProperty Name="id_instytucji" ColumnName="id_instytucji" />
+          <ScalarProperty Name="nazwa_instytucji" ColumnName="nazwa_instytucji" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="Model.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="id_statusu" ColumnName="id_statusu" />
+          <ScalarProperty Name="nazwa" ColumnName="nazwa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ticket">
+      <EntityTypeMapping TypeName="Model.Ticket">
+        <MappingFragment StoreEntitySet="Ticket">
+          <ScalarProperty Name="id_ticketu" ColumnName="id_ticketu" />
+          <ScalarProperty Name="nr_telefonu" ColumnName="nr_telefonu" />
+          <ScalarProperty Name="data_zgloszenia" ColumnName="data_zgloszenia" />
+          <ScalarProperty Name="kod_sms" ColumnName="kod_sms" />
+          <ScalarProperty Name="ip" ColumnName="ip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uzytkownik_batalion">
+      <EntityTypeMapping TypeName="Model.Uzytkownik_batalion">
+        <MappingFragment StoreEntitySet="Uzytkownik_batalion">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="numer_telefonu" ColumnName="numer_telefonu" />
+          <ScalarProperty Name="id_batalionu" ColumnName="id_batalionu" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uzytkownik_instytucja">
+      <EntityTypeMapping TypeName="Model.Uzytkownik_instytucja">
+        <MappingFragment StoreEntitySet="Uzytkownik_instytucja">
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="numer_telefonu" ColumnName="numer_telefonu" />
+          <ScalarProperty Name="id_instytucji" ColumnName="id_instytucji" />
+          <ScalarProperty Name="haslo" ColumnName="haslo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Zgloszenie">
+      <EntityTypeMapping TypeName="Model.Zgloszenie">
+        <MappingFragment StoreEntitySet="Zgloszenie">
+          <ScalarProperty Name="id_zgloszenia" ColumnName="id_zgloszenia" />
+          <ScalarProperty Name="pesel" ColumnName="pesel" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nr_telefonu" ColumnName="nr_telefonu" />
+          <ScalarProperty Name="kategoria_pomocy" ColumnName="kategoria_pomocy" />
+          <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+          <ScalarProperty Name="adres_zgloszenia" ColumnName="adres_zgloszenia" />
+          <ScalarProperty Name="id_batalionu" ColumnName="id_batalionu" />
+          <ScalarProperty Name="id_instytucji" ColumnName="id_instytucji" />
+          <ScalarProperty Name="id_statusu" ColumnName="id_statusu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Obszar_instytucji" TypeName="Model.Obszar_instytucji" StoreEntitySet="Obszar_instytucji">
+      <EndProperty Name="Instytucja">
+        <ScalarProperty Name="id_instytucji" ColumnName="id_instytucji" />
+      </EndProperty>
+      <EndProperty Name="Adres">
+        <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

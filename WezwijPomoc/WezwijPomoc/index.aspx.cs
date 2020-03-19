@@ -64,7 +64,7 @@ namespace WezwijPomoc
 
             }
         }
-        protected void Submit(object sender, EventArgs e)
+        protected void Send(object sender, EventArgs e)
         {
             Debug.Write(ValidatePesel());
             

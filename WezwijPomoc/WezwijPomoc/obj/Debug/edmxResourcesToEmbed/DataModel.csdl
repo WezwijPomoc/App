@@ -1,0 +1,209 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Adres">
+    <Key>
+      <PropertyRef Name="kod_pocztowy" />
+    </Key>
+    <Property Name="kod_pocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="miejscowosc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="powiat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="wojewodztwo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="batalion_odpowiedzialny" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_kod_pocztowy" FromRole="Adres" ToRole="Zgloszenie" />
+    <NavigationProperty Name="Batalion" Relationship="Self.FK_Odpowiedzialnosc_batalionu" FromRole="Adres" ToRole="Batalion" />
+    <NavigationProperty Name="Instytucja" Relationship="Self.Obszar_instytucji" FromRole="Adres" ToRole="Instytucja" />
+  </EntityType>
+  <EntityType Name="Batalion">
+    <Key>
+      <PropertyRef Name="id_batalionu" />
+    </Key>
+    <Property Name="id_batalionu" Type="Int32" Nullable="false" />
+    <Property Name="nazwa_brygady" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Adres" Relationship="Self.FK_Odpowiedzialnosc_batalionu" FromRole="Batalion" ToRole="Adres" />
+    <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_batalionu" FromRole="Batalion" ToRole="Zgloszenie" />
+    <NavigationProperty Name="Uzytkownik_batalion" Relationship="Self.FK_Pracodawca_batalion" FromRole="Batalion" ToRole="Uzytkownik_batalion" />
+  </EntityType>
+  <EntityType Name="Instytucja">
+    <Key>
+      <PropertyRef Name="id_instytucji" />
+    </Key>
+    <Property Name="id_instytucji" Type="Int32" Nullable="false" />
+    <Property Name="nazwa_instytucji" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_instytucja" FromRole="Instytucja" ToRole="Zgloszenie" />
+    <NavigationProperty Name="Adres" Relationship="Self.Obszar_instytucji" FromRole="Instytucja" ToRole="Adres" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="id_statusu" />
+    </Key>
+    <Property Name="id_statusu" Type="Int32" Nullable="false" />
+    <Property Name="nazwa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Zgloszenie" Relationship="Self.FK_status" FromRole="Status" ToRole="Zgloszenie" />
+  </EntityType>
+  <EntityType Name="Ticket">
+    <Key>
+      <PropertyRef Name="id_ticketu" />
+    </Key>
+    <Property Name="id_ticketu" Type="Int32" Nullable="false" />
+    <Property Name="nr_telefonu" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="data_zgloszenia" Type="DateTime" Precision="3" />
+    <Property Name="kod_sms" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+    <Property Name="ip" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Uzytkownik_batalion">
+    <Key>
+      <PropertyRef Name="login" />
+    </Key>
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imie" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="numer_telefonu" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_batalionu" Type="Int32" Nullable="false" />
+    <Property Name="haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Batalion" Relationship="Self.FK_Pracodawca_batalion" FromRole="Uzytkownik_batalion" ToRole="Batalion" />
+  </EntityType>
+  <EntityType Name="Uzytkownik_instytucja">
+    <Key>
+      <PropertyRef Name="login" />
+    </Key>
+    <Property Name="login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imie" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="nazwisko" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="numer_telefonu" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="id_instytucji" Type="Int32" />
+    <Property Name="haslo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Zgloszenie">
+    <Key>
+      <PropertyRef Name="id_zgloszenia" />
+    </Key>
+    <Property Name="id_zgloszenia" Type="Int32" Nullable="false" />
+    <Property Name="pesel" Type="String" MaxLength="11" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="imie" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="nr_telefonu" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kategoria_pomocy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="kod_pocztowy" Type="String" MaxLength="6" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="adres_zgloszenia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="id_batalionu" Type="Int32" Nullable="false" />
+    <Property Name="id_instytucji" Type="Int32" Nullable="false" />
+    <Property Name="id_statusu" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Adres" Relationship="Self.FK_kod_pocztowy" FromRole="Zgloszenie" ToRole="Adres" />
+    <NavigationProperty Name="Batalion" Relationship="Self.FK_batalionu" FromRole="Zgloszenie" ToRole="Batalion" />
+    <NavigationProperty Name="Instytucja" Relationship="Self.FK_instytucja" FromRole="Zgloszenie" ToRole="Instytucja" />
+    <NavigationProperty Name="Status" Relationship="Self.FK_status" FromRole="Zgloszenie" ToRole="Status" />
+  </EntityType>
+  <Association Name="FK_kod_pocztowy">
+    <End Role="Adres" Type="Self.Adres" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Adres">
+        <PropertyRef Name="kod_pocztowy" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="kod_pocztowy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Odpowiedzialnosc_batalionu">
+    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
+    <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batalion">
+        <PropertyRef Name="id_batalionu" />
+      </Principal>
+      <Dependent Role="Adres">
+        <PropertyRef Name="batalion_odpowiedzialny" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_batalionu">
+    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batalion">
+        <PropertyRef Name="id_batalionu" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_batalionu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pracodawca_batalion">
+    <End Role="Batalion" Type="Self.Batalion" Multiplicity="1" />
+    <End Role="Uzytkownik_batalion" Type="Self.Uzytkownik_batalion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Batalion">
+        <PropertyRef Name="id_batalionu" />
+      </Principal>
+      <Dependent Role="Uzytkownik_batalion">
+        <PropertyRef Name="id_batalionu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_instytucja">
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Instytucja">
+        <PropertyRef Name="id_instytucji" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_instytucji" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Zgloszenie" Type="Self.Zgloszenie" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="id_statusu" />
+      </Principal>
+      <Dependent Role="Zgloszenie">
+        <PropertyRef Name="id_statusu" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Obszar_instytucji">
+    <End Role="Instytucja" Type="Self.Instytucja" Multiplicity="*" />
+    <End Role="Adres" Type="Self.Adres" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Adres" EntityType="Self.Adres" />
+    <EntitySet Name="Batalion" EntityType="Self.Batalion" />
+    <EntitySet Name="Instytucja" EntityType="Self.Instytucja" />
+    <EntitySet Name="Status" EntityType="Self.Status" />
+    <EntitySet Name="Ticket" EntityType="Self.Ticket" />
+    <EntitySet Name="Uzytkownik_batalion" EntityType="Self.Uzytkownik_batalion" />
+    <EntitySet Name="Uzytkownik_instytucja" EntityType="Self.Uzytkownik_instytucja" />
+    <EntitySet Name="Zgloszenie" EntityType="Self.Zgloszenie" />
+    <AssociationSet Name="FK_kod_pocztowy" Association="Self.FK_kod_pocztowy">
+      <End Role="Adres" EntitySet="Adres" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Odpowiedzialnosc_batalionu" Association="Self.FK_Odpowiedzialnosc_batalionu">
+      <End Role="Batalion" EntitySet="Batalion" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+    <AssociationSet Name="FK_batalionu" Association="Self.FK_batalionu">
+      <End Role="Batalion" EntitySet="Batalion" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pracodawca_batalion" Association="Self.FK_Pracodawca_batalion">
+      <End Role="Batalion" EntitySet="Batalion" />
+      <End Role="Uzytkownik_batalion" EntitySet="Uzytkownik_batalion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_instytucja" Association="Self.FK_instytucja">
+      <End Role="Instytucja" EntitySet="Instytucja" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="FK_status" Association="Self.FK_status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Zgloszenie" EntitySet="Zgloszenie" />
+    </AssociationSet>
+    <AssociationSet Name="Obszar_instytucji" Association="Self.Obszar_instytucji">
+      <End Role="Instytucja" EntitySet="Instytucja" />
+      <End Role="Adres" EntitySet="Adres" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
