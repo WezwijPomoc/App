@@ -10,7 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Wezwij Pomoc</title>
 
-    <!-- skrypt -->
+    <!-- skrypt - na ten moment useless -->
     <script runat="server">
         protected void RadioButton_CheckedChanged(object sender,System.EventArgs e) {
             if (RadioButton2.Checked == true)
@@ -53,8 +53,130 @@
                 </asp:TableRow>
             </asp:Table>
         </div>
-        
 
+        <!-- Nowy formularz -->
+        <div>
+        <asp:Table ID="Table3" runat="server" HorizontalAlign="Center">
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <asp:Label ID="zakresWsparciaLabel" runat="server" Text="CO? - ZAKRES WSPARCIA"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <asp:TextBox ID="zakresWsparciaTextBox" runat="server" Height="100"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <asp:Label ID="odKiedyLabel" runat="server" Text="OD KIEDY"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="rokLabel" runat="server" Text="Rok"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="rokTextBox" runat="server"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="miesiacLabel" runat="server" Text="Miesiąc"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="miesiacTextBox" runat="server"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="dzienLabel" runat="server" Text="Dzień"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="dzienTextBox" runat="server"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell>
+                    <asp:Label ID="godzinaLabel" runat="server" Text="Godzina"></asp:Label>
+                </asp:TableCell>
+                <asp:TableCell>
+                    <asp:TextBox ID="godzinaTextBox" runat="server"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <asp:Label ID="priorytetLabel" runat="server" Text="Priorytet"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
+                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                        <asp:ListItem>PILNE* - realizacja do 8 h</asp:ListItem>
+                        <asp:ListItem>UMIARKOWANE* - realizacja 8-16 h</asp:ListItem>
+                        <asp:ListItem Selected="True">MOŻE CZEKAĆ* - do realizacji 16-48 h</asp:ListItem>
+                    </asp:RadioButtonList>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center" ColumnSpan="2" >
+                    <asp:Label ID="rejonDzialaniaLabel" runat="server" Text="GDZIE ? - REJON DZIAŁANIA"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell HorizontalAlign="Center"  ColumnSpan="2" >
+                    <asp:TextBox ID="rejonDzialaniaTextBox" runat="server" Rows="4" Height="100"></asp:TextBox>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                <asp:TableCell ColumnSpan="2"  HorizontalAlign="Center" >
+                    <asp:Label ID="osobaDoKontaktowLabel" runat="server" Text="OSOBA DO KONTAKTÓW"></asp:Label>
+                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="imieLabel" runat="server" Text="Imię"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="imieTextBox" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+            </asp:TableRow>
+              <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="nazwiskoLabel" runat="server" Text="Nazwisko"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="nazwiskoTextBox" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="numerTelefonuLabel" runat="server" Text="Numer telefonu"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="numerTelefonuTextBox" runat="server" Text="+48 "></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+             <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="emailLabel" runat="server" Text="e-mail"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+            </asp:TableRow>
+              <asp:TableRow>
+                    <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
+                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send"/>
+                        <asp:Label ID="test" runat="server" />
+                    </asp:TableCell>
+                    
+                </asp:TableRow>
+        </asp:Table>
+        </div>
+        
+        <br />
+        <br />
         <!-- Formularz wypełniany przez użytkownika -->
         <div>
             <script runat="server">
@@ -64,12 +186,7 @@
             </script>
             <asp:Table ID="Table1" runat="server" Width="382px" HorizontalAlign="Center">
                 <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="imieLabel" runat="server" Text="Imię"></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="imieTextBox" runat="server"></asp:TextBox>
-                    </asp:TableCell>
+                    
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="imieRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="imieTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </asp:TableCell>
@@ -120,16 +237,16 @@
                    
                         </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow>
+                   <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="numerTelefonuLabel" runat="server" Text="Numer telefonu"></asp:Label>
+                        <asp:Label ID="Label1" runat="server" Text="Numer telefonu"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="numerTelefonuTextBox" runat="server" Text="+48 "></asp:TextBox>
+                        <asp:TextBox ID="TextBox1" runat="server" Text="+48 "></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:RequiredFieldValidator ID="numerTelefonuRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="numerTelefonuTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="numerTelefonuRegularExpressionValidator" ValidationExpression="^\+48 \d{9}" runat="server" ErrorMessage="Wymagany format +48 ccccccccc" ControlToValidate="numerTelefonuTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="numerTelefonuTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" ValidationExpression="^\+48 \d{9}" runat="server" ErrorMessage="Wymagany format +48 ccccccccc" ControlToValidate="numerTelefonuTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -172,13 +289,7 @@
                         <asp:TextBox ID="adresTextBox" runat="server"></asp:TextBox>
                     </asp:TableCell>
                 </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie" OnClick="Send"/>
-                        <asp:Label ID="test" runat="server" />
-                    </asp:TableCell>
-                    
-                </asp:TableRow>
+              
             </asp:Table>
         </div> 
 
