@@ -26,7 +26,6 @@ namespace WezwijPomoc
         public string nazwa_instytucji { get; set; }
         public string kod_pocztowy { get; set; }
         public Nullable<int> typ_instytucji { get; set; }
-        public string wojewodztwo { get; set; }
     
         public virtual Adres Adres { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

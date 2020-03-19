@@ -9,10 +9,12 @@
 
 namespace WezwijPomoc
 {
+    using Microsoft.AspNet.Identity.EntityFramework;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using WezwijPomoc.Models;
+
     public partial class Entities : DbContext
     {
         public Entities()
@@ -22,7 +24,12 @@ namespace WezwijPomoc
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            base.OnModelCreating(modelBuilder);
+           // modelBuilder.HasDefaultSchema("dbo");
+            modelBuilder.Entity<ApplicationUser>().ToTable("AspNetUser","dbo");
+            modelBuilder.Entity<IdentityUserRole>().ToTable("AspNetUserRoles");
+            modelBuilder.Entity<IdentityUserLogin>().ToTable("AspNetUserLogins");
+            modelBuilder.Entity<IdentityUserClaim>().ToTable("AspNetUserClaims");
         }
     
         public virtual DbSet<Adres> Adres { get; set; }

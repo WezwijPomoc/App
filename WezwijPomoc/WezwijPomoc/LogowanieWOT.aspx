@@ -42,6 +42,12 @@
                         <asp:Button ID="potwierdzButton" runat="server" Text="Potwierdź" />
                     </asp:TableCell>
                 </asp:TableRow>
+                <asp:TableRow>
+  
+                        <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
+                        <asp:Button ID="ZarejestrujButton" runat="server" Text="Zarejestruj" />
+                    </asp:TableCell>
+                </asp:TableRow>
             </asp:Table>
         </div>
     </form>
