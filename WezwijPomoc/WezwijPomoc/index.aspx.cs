@@ -1,21 +1,25 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using WezwijPomoc.Models;
 using WezwijPomoc.Services;
 
 namespace WezwijPomoc
 {
     public partial class index : System.Web.UI.Page
     {
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            /*
+            TicketService ticketService = new TicketService();
+            ticketService.CreateTicket("123456", "531969568");
+            */
         }
+        
+        /*
         bool ValidatePesel()
         {
             string pesel = peselTextBox.Text;
@@ -66,10 +70,39 @@ namespace WezwijPomoc
 
             }
         }
+        
+        bool validateFrequency()
+        {
+            TicketService ticketService = new TicketService();
+
+            var tickets = ticketService.GetTickets(numerTelefonuTextBox.Text);
+            if (tickets == null) return true;
+            if (tickets.Count() < 1) return true;
+            var ticket = tickets.Last();
+            
+            var difference = DateTime.Now - ticket.data_zgloszenia;
+            if (difference.Value.Hours < 1)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+
+        
+
+        
+
         protected void Send(object sender, EventArgs e)
         {
-            
-            
+            ZgloszenieService zgloszenieService = new ZgloszenieService();
+            Debug.Write(ValidatePesel());
+            Debug.Write(validateFrequency());
+            String adres_zgloszenia = miejscowoscTextBox.ToString() + " " + adresTextBox.ToString();
+            zgloszenieService.CreateZgloszenie(peselTextBox.ToString(), imieTextBox.ToString(), numerTelefonuTextBox.ToString(), kategoriaPomocyDropDownList.ToString(), kodPocztowyTextBox.ToString(), adres_zgloszenia);
         }
+        */
     }
 }
