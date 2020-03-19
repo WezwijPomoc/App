@@ -10,7 +10,7 @@
 namespace WezwijPomoc {
     
     
-    public partial class LogowanieWOT {
+    public partial class Rejestracja {
         
         /// <summary>
         /// form1 control.
@@ -22,24 +22,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Table2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Table Table2;
-        
-        /// <summary>
-        /// naglowekLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label naglowekLabel;
-        
-        /// <summary>
         /// Table1 control.
         /// </summary>
         /// <remarks>
@@ -49,13 +31,13 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.Table Table1;
         
         /// <summary>
-        /// Label1 control.
+        /// loginLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label loginLabel;
         
         /// <summary>
         /// loginTextBox control.
@@ -67,13 +49,13 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox loginTextBox;
         
         /// <summary>
-        /// Label2 control.
+        /// hasloLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label hasloLabel;
         
         /// <summary>
         /// hasloTextBox control.
@@ -85,21 +67,30 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox hasloTextBox;
         
         /// <summary>
-        /// potwierdzButton control.
+        /// emailLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button potwierdzButton;
+        protected global::System.Web.UI.WebControls.Label emailLabel;
         
         /// <summary>
-        /// ZarejestrujButton control.
+        /// emailTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ZarejestrujButton;
+        protected global::System.Web.UI.WebControls.TextBox emailTextBox;
+        
+        /// <summary>
+        /// rejestracjaButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button rejestracjaButton;
     }
 }
