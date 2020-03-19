@@ -42,17 +42,7 @@
 
         <!-- Formularz wypełniany przez użytkownika -->
         <div>
-            <script runat="server">
-                
 
-                protected async void Page_Load(object sender, EventArgs e)
-                    {
-                    SMSCodeGenerator generator = new SMSCodeGenerator();
-                    var res = await generator.GetSMSCode();
-                    Debug.Write(res);
-                    test.Text = res;
-                 }
-            </script>
             <asp:Table ID="Table1" runat="server" Width="382px" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
