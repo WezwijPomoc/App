@@ -12,23 +12,18 @@ namespace WezwijPomoc
     using System;
     using System.Collections.Generic;
     
-    public partial class Adres
+    public partial class AspNetRoles
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Adres()
+        public AspNetRoles()
         {
-            this.Instytucja = new HashSet<Instytucja>();
-            this.Zgloszenie = new HashSet<Zgloszenie>();
+            this.AspNetUser = new HashSet<AspNetUser>();
         }
     
-        public string kod_pocztowy { get; set; }
-        public string miejscowosc { get; set; }
-        public string powiat { get; set; }
-        public string wojewodztwo { get; set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Instytucja> Instytucja { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Zgloszenie> Zgloszenie { get; set; }
+        public virtual ICollection<AspNetUser> AspNetUser { get; set; }
     }
 }
