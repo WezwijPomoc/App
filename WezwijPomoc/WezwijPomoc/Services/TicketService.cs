@@ -37,11 +37,11 @@ namespace WezwijPomoc.Services
         /// </summary>
         /// <param name="phoneNumber"> Numer telefonu</param>
         /// <returns>Lista ticketów dla danego numeru posortowana rosnąco</returns>
-        IEnumerable<Ticket> GetTickets(string phoneNumber)
+        public IEnumerable<Ticket> GetTickets(string phoneNumber)
         {
             using (Entities1 db = new Entities1())
             {
-                return db.Ticket.Select(s => s).Where(t => t.nr_telefonu == phoneNumber).OrderBy(p=>p.data_zgloszenia);
+                return db.Ticket.Select(s => s).Where(t => t.nr_telefonu == phoneNumber).OrderBy(p=>p.data_zgloszenia).ToList();
             }
         }
 
