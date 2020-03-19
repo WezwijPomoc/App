@@ -10,16 +10,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Wezwij Pomoc</title>
 
-    <!-- poniższy skrypt nie działa jeszcze -->
-    <script language="C#" runat="server">   
-
-        void zmianaKimJestesRadioButtonList(object Source, EventArgs e)
-        {
-            kimJesteslLabel.Text = "wychwycilem zmiane";
-        }
-
-  </script>
-        
+  
 </head>
 <body>
     <form id="form1" runat="server">
@@ -45,13 +36,7 @@
             <script runat="server">
                 
 
-                protected async void Page_Load(object sender, EventArgs e)
-                    {
-                    SMSCodeGenerator generator = new SMSCodeGenerator();
-                    var res = await generator.GetSMSCode();
-                    Debug.Write(res);
-                    test.Text = res;
-                 }
+             
             </script>
             <asp:Table ID="Table1" runat="server" Width="382px" HorizontalAlign="Center">
                 <asp:TableRow>

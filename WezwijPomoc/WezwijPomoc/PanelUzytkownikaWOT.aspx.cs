@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WezwijPomoc
 {
-	public partial class Weryfikacja : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
-		{
+    public partial class PanelUzytkownikaWOT : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-		}
-	}
+        }
+    }
 }

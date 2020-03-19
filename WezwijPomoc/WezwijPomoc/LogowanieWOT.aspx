@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieWOT.aspx.cs" Inherits="WezwijPomoc.LogowanieBatalion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LogowanieWOT.aspx.cs" Inherits="WezwijPomoc.LogowanieWOT" %>
 
 <!DOCTYPE html>
 
@@ -8,7 +8,41 @@
 </head>
 <body>
     <form id="form1" runat="server">
+         <div>
+            <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
+                 <asp:TableRow>
+                    <asp:TableCell>
+                         <asp:Label ID="naglowekLabel" runat="server" Text="Logowanie WOT" Font-Size="Large" Font-Bold="True"></asp:Label>
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
+        </div>
+
+
         <div>
+            <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="Label1" runat="server" Text="Login"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="loginTextBox" runat="server"></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:Label ID="Label2" runat="server" Text="Hasło"></asp:Label>
+                    </asp:TableCell>
+                    <asp:TableCell>
+                        <asp:TextBox ID="hasloTextBox" runat="server" TextMode="Password"></asp:TextBox>
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
+                        <asp:Button ID="potwierdzButton" runat="server" Text="Potwierdź" />
+                    </asp:TableCell>
+                </asp:TableRow>
+            </asp:Table>
         </div>
     </form>
 </body>

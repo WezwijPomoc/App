@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace WezwijPomoc
 {
-    public partial class LogowanieBatalion : System.Web.UI.Page
-    {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+	public partial class LogowanieWOT : System.Web.UI.Page
+	{
+		protected void Page_Load(object sender, EventArgs e)
+		{
 
-        }
-    }
+		}
+	}
 }
