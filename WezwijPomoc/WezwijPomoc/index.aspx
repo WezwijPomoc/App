@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" CodeBehind="index.aspx.cs" Inherits="WezwijPomoc.index" %>
-<<%@ Import Namespace="WezwijPomoc" %>
-<<%@ Import Namespace="System.Diagnostics" %>
+<%@ Import Namespace="WezwijPomoc" %>
+<%@ Import Namespace="System.Diagnostics" %>
 <!DOCTYPE html>
 
   
@@ -10,6 +10,30 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>Wezwij Pomoc</title>
 
+    <!-- skrypt -->
+    <script runat="server">
+        protected void RadioButton_CheckedChanged(object sender,System.EventArgs e) {
+            if (RadioButton2.Checked == true)
+            {
+                peselLabel.Visible = false;
+                peselTextBox.Visible = false;
+                peselRequiredFieldValidator.Enabled = false;
+                peselRegularExpressionValidator.Enabled = false;
+                regonLabel.Visible = true;
+                regonTextBox.Visible = true;
+                regonRequiredFieldValidator.Enabled = true;
+            }
+            else {
+                peselTextBox.Visible = true;
+                peselLabel.Visible = true;
+                 peselRequiredFieldValidator.Enabled = true;
+                peselRegularExpressionValidator.Enabled = true;
+                regonLabel.Visible = false;
+                regonTextBox.Visible = false;
+                regonRequiredFieldValidator.Enabled = false;
+            }
+        }
+        </script>
   
 </head>
 <body>
@@ -19,7 +43,7 @@
             <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Image ID="helpImage" runat="server" ImageUrl="~/img/help.gif"/>
+                        <asp:Image ID="helpImage"  Visible="false" runat="server" ImageUrl="~/img/help.gif"/>
                     </asp:TableCell>
                  </asp:TableRow>
                  <asp:TableRow>
@@ -50,28 +74,51 @@
                         <asp:RequiredFieldValidator ID="imieRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="imieTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                     </asp:TableCell>
                 </asp:TableRow>
+                 <asp:TableRow>
+                    <asp:TableCell>
+                              <asp:RadioButton 
+                ID="RadioButton1" 
+                runat="server" 
+                Text="Pesel"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+                Checked="true"
+
+                />
+
+                        </asp:TableCell>
+                         <asp:TableCell>
+                              <asp:RadioButton 
+                ID="RadioButton2" 
+                runat="server" 
+                Text="Regon"
+                GroupName="Software" 
+                AutoPostBack="true" 
+                OnCheckedChanged="RadioButton_CheckedChanged"
+
+                />
+
+                        </asp:TableCell>
+                    </asp:TableRow>
+
+
+               
                 <asp:TableRow>
                     <asp:TableCell>
-                        <asp:Label ID="peselLabel" runat="server" Text="Pesel"></asp:Label>
+                          <asp:Label ID="peselLabel" runat="server" Text="Pesel"></asp:Label>
+                        <asp:Label ID="regonLabel" runat="server" Text="Regon" Visible="false"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                         <asp:TextBox ID="peselTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="regonTextBox" runat="server" Visible="false"></asp:TextBox>
+                        <asp:TextBox ID="peselTextBox" runat="server"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:RequiredFieldValidator ID="peselRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="peselTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="regonRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="regonTextBox" ForeColor="Red" Enabled="false" Display="Dynamic"></asp:RequiredFieldValidator>
+                       <asp:RequiredFieldValidator ID="peselRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="peselTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="peselRegularExpressionValidator" ValidationExpression="^\d{11}" runat="server" ErrorMessage="Wymagany format ccccccccccc" ControlToValidate="peselTextBox" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
-                    </asp:TableCell>
-                </asp:TableRow>
-                <asp:TableRow>
-                    <asp:TableCell>
-                        <asp:Label ID="regonLabel" runat="server" Text="Regon"></asp:Label>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:TextBox ID="regonTextBox" runat="server"></asp:TextBox>
-                    </asp:TableCell>
-                    <asp:TableCell>
-                        <asp:RequiredFieldValidator ID="regonRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="regonTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
-                    </asp:TableCell>
+                   
+                        </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
                     <asp:TableCell>
@@ -114,7 +161,7 @@
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="miejscowoscRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RequiredFieldValidator>
-                        <asp:RegularExpressionValidator ID="miejscowoscRegularExpressionValidator" runat="server" ValidationExpression="(([a-zA-Z]{3,32}(\s|-){1}[a-zA-Z]{3,32})|([a-zA-Z]{3,32}))" ErrorMessage="Max dlugosc 30 znaków" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <asp:RegularExpressionValidator ID="miejscowoscRegularExpressionValidator" runat="server" ValidationExpression="(([a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32}(\s|-){1}[a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32})|([a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32}))" ErrorMessage="Max dlugosc 30 znaków" ControlToValidate="miejscowoscTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
