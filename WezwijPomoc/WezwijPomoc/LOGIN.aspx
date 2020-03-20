@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WezwijPomoc.LogowanieInstytucja" %>
+﻿<%@ Page Async="true" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WezwijPomoc.LogowanieInstytucja" %>
 
 <!DOCTYPE html>
 
@@ -58,6 +58,10 @@
                         
                         <asp:TextBox CssClass="pola-teksty" ID="loginTextBox" runat="server"></asp:TextBox>
                     </asp:TableCell>
+                        <asp:TableCell>
+                             <asp:RequiredFieldValidator ID="loginRequiredFieldValidator" ControlToValidate="loginTextBox" runat="server" ErrorMessage="Pole wymagane" Text="*" ForeColor="Red" Display="Dynamic" ></asp:RequiredFieldValidator>              
+                        <asp:RegularExpressionValidator ID="loginRegularExpressionValidator" ControlToValidate="loginTextBox" ValidationExpression="^.{3,18}$" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Zły format" Text="*" ></asp:RegularExpressionValidator>
+                        </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >
                     <asp:TableCell>
@@ -70,13 +74,28 @@
                         
                         <asp:TextBox CssClass="pola-teksty" ID="hasloTextBox" runat="server" TextMode="Password"></asp:TextBox>
                  </asp:TableCell>
+                      <asp:TableCell>
+                             <asp:RequiredFieldValidator ID="hasloRequiredFieldValidator" ControlToValidate="hasloTextBox" runat="server" ErrorMessage="Pole wymagane" Text="*" ForeColor="Red" Display="Dynamic" ></asp:RequiredFieldValidator>
+                           <asp:RegularExpressionValidator ID="hasloRegularExpressionValidator" ControlToValidate="hasloTextBox" ValidationExpression="^.{8,24}$" runat="server" ForeColor="Red" Display="Dynamic" ErrorMessage="Zły format" Text="*"></asp:RegularExpressionValidator>
+                      </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow >
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="potwierdzButton" CssClass="button" runat="server" Text="Potwierdź" OnClick="potwierdzButton_Click"/>
+                        <asp:Button ID="potwierdzButton" CssClass="button" runat="server" Text="Potwierdź" OnClick="potwierdzButton_Click" ValidateRequestMode="Enabled" CausesValidation="True"   />
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
+                        <asp:Button ID="rejestracjaButton" CssClass="button" runat="server" Text="Rejestracja" CausesValidation="false" OnClick="potwierdzButton_Click" />
+                    </asp:TableCell>
+                </asp:TableRow>
+                <asp:TableRow>
+                    <asp:TableCell>
+                        <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
         </div>
 
             </div>

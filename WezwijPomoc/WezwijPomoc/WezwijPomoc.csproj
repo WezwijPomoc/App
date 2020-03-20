@@ -153,6 +153,7 @@
     <Content Include="img\pobrane.png" />
     <Content Include="img\WOT-logo.png" />
     <Content Include="index.aspx" />
+    <Content Include="indexFromMaster.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="fonts\MainPage.css" />
     <Content Include="Model.Context.tt">
@@ -168,6 +169,8 @@
     <Content Include="PanelUzytkownikaInstytucja.aspx" />
     <Content Include="PanelUzytkownikaWOT.aspx" />
     <Content Include="Views\message.html" />
+    <Content Include="Rejestracja.aspx" />
+    <Content Include="RejestracjaWithMaster.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -203,6 +206,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexFromMaster.aspx.cs">
+      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexFromMaster.aspx.designer.cs">
+      <DependentUpon>indexFromMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Instytucja.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -248,9 +258,20 @@
       <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DefaultValidationService.cs" />
-    <Compile Include="Services\MessageService.cs" />
-    <Compile Include="Services\IValidationService.cs" />
+    <Compile Include="Rejestracja.aspx.cs">
+      <DependentUpon>Rejestracja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rejestracja.aspx.designer.cs">
+      <DependentUpon>Rejestracja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RejestracjaWithMaster.aspx.cs">
+      <DependentUpon>RejestracjaWithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RejestracjaWithMaster.aspx.designer.cs">
+      <DependentUpon>RejestracjaWithMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services\ZgloszenieService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

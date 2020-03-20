@@ -1,26 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  Async="true" CodeBehind="index.aspx.cs" Inherits="WezwijPomoc.index" %>
-<%@ Import Namespace="WezwijPomoc" %>
-<%@ Import Namespace="System.Diagnostics" %>
-<!DOCTYPE html>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="indexFromMaster.aspx.cs" Inherits="WezwijPomoc.indexFromMaster" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 
-  
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        
-    
-    <title>Wezwij Pomoc</title>
-
- 
-  
-</head>
-<body>
-      
-
-       
-
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="CPH1" runat="server">
+     
         <!-- nagłówek -->
         <div >
             <asp:Table ID="Table2" CssClass="tabelka" runat="server" HorizontalAlign="Center">
@@ -50,7 +33,7 @@
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">                 
-                    <asp:TextBox ID="zakresWsparciaTextBox" TextMode="MultiLine" Rows="10" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="zakresWsparciaTextBox" CssClass="pola-teksty" TextMode="MultiLine" Rows="10" runat="server"></asp:TextBox>
 
                  </asp:TableCell>
                 <asp:TableCell>
@@ -68,7 +51,7 @@
                     <asp:Label ID="rokLabel" runat="server" Text="Rok"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="rokTextBox"  runat="server" ></asp:TextBox>
+                    <asp:TextBox ID="rokTextBox" CssClass="pola-teksty"  runat="server" ></asp:TextBox>
                 </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="rokRequiredFieldValidator" ControlToValidate="rokTextBox" runat="server"  Display="Dynamic" ErrorMessage="*Pole wymagane" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -81,7 +64,7 @@
                     <asp:Label ID="miesiacLabel" runat="server" Text="Miesiąc"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="miesiacDropDownList" runat="server">
+                    <asp:DropDownList CssClass="pola-teksty" ID="miesiacDropDownList" runat="server">
                         <asp:ListItem Selected="True" Text="Styczeń"></asp:ListItem>
                         <asp:ListItem Text="Luty"></asp:ListItem>
                         <asp:ListItem Text="Marzec"></asp:ListItem>
@@ -103,16 +86,17 @@
                     <asp:Label ID="dzienLabel" runat="server" Text="Dzień"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:DropDownList ID="dzienDropDownList" runat="server">
-                        <asp:ListItem Selected="True" Text="1"></asp:ListItem>
-                        <asp:ListItem Text="2" ></asp:ListItem>
-                        <asp:ListItem Text="3" ></asp:ListItem>
-                        <asp:ListItem Text="4" ></asp:ListItem>
-                        <asp:ListItem Text="5" ></asp:ListItem>
-                        <asp:ListItem Text="6" ></asp:ListItem>
-                        <asp:ListItem Text="7" ></asp:ListItem>
-                        <asp:ListItem Text="8" ></asp:ListItem>
-                        <asp:ListItem Text="9" ></asp:ListItem>
+                    <asp:DropDownList CssClass="pola-teksty" ID="dzienDropDownList" runat="server">
+                        <asp:ListItem Selected="True" Text="00"></asp:ListItem>
+                        <asp:ListItem Text="01"></asp:ListItem>
+                        <asp:ListItem Text="02" ></asp:ListItem>
+                        <asp:ListItem Text="03" ></asp:ListItem>
+                        <asp:ListItem Text="04" ></asp:ListItem>
+                        <asp:ListItem Text="05" ></asp:ListItem>
+                        <asp:ListItem Text="06" ></asp:ListItem>
+                        <asp:ListItem Text="07" ></asp:ListItem>
+                        <asp:ListItem Text="08" ></asp:ListItem>
+                        <asp:ListItem Text="09" ></asp:ListItem>
                         <asp:ListItem Text="10" ></asp:ListItem>
                         <asp:ListItem Text="11" ></asp:ListItem>
                         <asp:ListItem Text="12" ></asp:ListItem>
@@ -144,7 +128,7 @@
                     <asp:Label ID="godzinaLabel" runat="server" Text="Godzina"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                      <asp:DropDownList ID="godzinaDropDownList1" runat="server">
+                      <asp:DropDownList CssClass="listy2" ID="godzinaDropDownList1" runat="server">
                         <asp:ListItem Selected="True" Text="1"></asp:ListItem>
                         <asp:ListItem Text="2" ></asp:ListItem>
                         <asp:ListItem Text="3" ></asp:ListItem>
@@ -171,16 +155,17 @@
                         <asp:ListItem Text="24" ></asp:ListItem>
    
                     </asp:DropDownList>
-                    <asp:DropDownList ID="minutaDropDownList" runat="server">
-                        <asp:ListItem Selected="True" Text="1"></asp:ListItem>
-                        <asp:ListItem Text="2" ></asp:ListItem>
-                        <asp:ListItem Text="3" ></asp:ListItem>
-                        <asp:ListItem Text="4" ></asp:ListItem>
-                        <asp:ListItem Text="5" ></asp:ListItem>
-                        <asp:ListItem Text="6" ></asp:ListItem>
-                        <asp:ListItem Text="7" ></asp:ListItem>
-                        <asp:ListItem Text="8" ></asp:ListItem>
-                        <asp:ListItem Text="9" ></asp:ListItem>
+                    <asp:DropDownList CssClass="listy2" ID="minutaDropDownList" runat="server">
+                        <asp:ListItem Selected="True" Text="00"></asp:ListItem>
+                        <asp:ListItem Text="01" ></asp:ListItem>
+                        <asp:ListItem Text="02" ></asp:ListItem>
+                        <asp:ListItem Text="03" ></asp:ListItem>
+                        <asp:ListItem Text="04" ></asp:ListItem>
+                        <asp:ListItem Text="05" ></asp:ListItem>
+                        <asp:ListItem Text="06" ></asp:ListItem>
+                        <asp:ListItem Text="07" ></asp:ListItem>
+                        <asp:ListItem Text="08" ></asp:ListItem>
+                        <asp:ListItem Text="09" ></asp:ListItem>
                         <asp:ListItem Text="10" ></asp:ListItem>
                         <asp:ListItem Text="11" ></asp:ListItem>
                         <asp:ListItem Text="12" ></asp:ListItem>
@@ -245,9 +230,9 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                        <asp:ListItem Text = "PILNE - realizacja do 8 h" Value ="1"/>
-                        <asp:ListItem Text = "UMIARKOWANE - realizacja 8-16 h" Value ="2"/>
-                        <asp:ListItem Text = "MOŻE CZEKAĆ - do realizacji 16-48 h" Value ="3"/>
+                        <asp:ListItem>PILNE - realizacja do 8 h</asp:ListItem>
+                        <asp:ListItem>UMIARKOWANE - realizacja 8-16 h</asp:ListItem>
+                        <asp:ListItem Selected="True">MOŻE CZEKAĆ - do realizacji 16-48 h</asp:ListItem>
                     </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
@@ -257,7 +242,7 @@
                         <asp:Label ID="kodPocztowyLabel4" runat="server" Text="Kod pocztowy"></asp:Label>
                      </asp:TableCell>
                  <asp:TableCell>
-                        <asp:TextBox ID="kodPocztowyTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="kodPocztowyTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell><asp:TableCell>
                         <asp:RequiredFieldValidator ID="kodPocztowyRequiredFieldValidator" runat="server" ErrorMessage="Pole wymagane" ControlToValidate="kodPocztowyTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="kodPocztowyRegularExpressionValidator" runat="server" ValidationExpression="^\d{2}\-\d{3}" ErrorMessage="Wymagany format cc-ccc" ControlToValidate="kodPocztowyTextBox" ForeColor="Red"></asp:RegularExpressionValidator>
@@ -265,7 +250,7 @@
                     <asp:TableCell>
                         <asp:Label ID="miejscowoscLabel" runat="server" Text="Miejscowość"></asp:Label>
                     </asp:TableCell><asp:TableCell>
-                        <asp:TextBox ID="miejscowoscTextBox" runat="server" ></asp:TextBox>
+                        <asp:TextBox ID="miejscowoscTextBox" CssClass="pola-teksty" runat="server" ></asp:TextBox>
                     </asp:TableCell><asp:TableCell>
                         <asp:RequiredFieldValidator ID="miejscowoscRequiredFieldValidator" runat="server" ErrorMessage="*Pole wymagane" ControlToValidate="miejscowoscTextBox" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
                         <asp:RegularExpressionValidator ID="miejscowoscRegularExpressionValidator" runat="server" ValidationExpression="(([a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32}(\s|-){1}[a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32})|([a-zA-ZąćężźłóńĄĆŻŹĘŁÓŃ]{3,32}))" ErrorMessage="*Max dlugosc 30 znaków" ControlToValidate="miejscowoscTextBox" ForeColor="Red" Display="Dynamic"></asp:RegularExpressionValidator>
@@ -275,7 +260,7 @@
                     <asp:TableCell>
                         <asp:Label ID="adresLabel" runat="server" Text="Adres"></asp:Label>
                     </asp:TableCell><asp:TableCell>
-                        <asp:TextBox ID="adresTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="adresTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="adresRequiredFieldValidator" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic" ControlToValidate="adresTextBox"></asp:RequiredFieldValidator>
@@ -292,7 +277,7 @@
                         <asp:Label ID="imieLabel" runat="server" Text="Imię"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="imieTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="imieTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell>
                 <asp:TableCell>
                          <asp:RequiredFieldValidator ID="imieRequiredFieldValidator" ControlToValidate="imieTextBox" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -304,7 +289,7 @@
                         <asp:Label ID="nazwiskoLabel" runat="server" Text="Nazwisko"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="nazwiskoTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="nazwiskoTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell>
                   <asp:TableCell>
                          <asp:RequiredFieldValidator ID="nazwiskoRequiredFieldValidator" ControlToValidate="nazwiskoTextBox" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red"></asp:RequiredFieldValidator>
@@ -316,7 +301,7 @@
                         <asp:Label ID="numerTelefonuLabel" runat="server" Text="Numer telefonu"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="numerTelefonuTextBox" runat="server" Text="+48 "></asp:TextBox>
+                        <asp:TextBox ID="numerTelefonuTextBox" CssClass="pola-teksty" runat="server" Text="+48 "></asp:TextBox>
                     </asp:TableCell>
                 <asp:TableCell>
                          <asp:RequiredFieldValidator ID="numerTelefonuRequiredFieldValidator" ControlToValidate="numerTelefonuTextBox" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic" ></asp:RequiredFieldValidator>
@@ -328,7 +313,7 @@
                         <asp:Label ID="emailLabel" runat="server" Text="e-mail"></asp:Label>
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="emailTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell>
                  <asp:TableCell>
                          <asp:RequiredFieldValidator ID="emailRequiredFieldValidator" ControlToValidate="emailTextBox" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic" ></asp:RequiredFieldValidator>
@@ -339,7 +324,7 @@
             </asp:TableRow>
               <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
-                        <asp:Button ID="wyslijZgloszenieButton"  runat="server" Text="Wyślij zgłoszenie"  />
+                        <asp:Button ID="wyslijZgloszenieButton" CssClass="button" runat="server" Text="Wyślij zgłoszenie"  />
                         
                     </asp:TableCell>
 
@@ -350,4 +335,5 @@
        
       
 
-        </form></body></html>
+        
+</asp:Content>

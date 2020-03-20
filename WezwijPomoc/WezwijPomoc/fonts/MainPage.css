@@ -127,6 +127,28 @@ table{
     background-repeat: no-repeat;
     padding: 4px 10px;
 }
+.listy1 {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 10px;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 4px 10px;
+}
+
+.listy2 {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 10px;
+    background-color: white;
+    background-repeat: no-repeat;
+    padding: 4px 10px;
+}
+
 .teksty {
     width: 100%;
     margin:1px;
