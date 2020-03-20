@@ -61,11 +61,8 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.4.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.3.0.1\lib\net45\Microsoft.Owin.Security.dll</HintPath>
@@ -152,6 +149,7 @@
     <Content Include="img\pobrane.png" />
     <Content Include="img\WOT-logo.png" />
     <Content Include="index.aspx" />
+    <Content Include="indexFromMaster.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="fonts\MainPage.css" />
     <Content Include="Model.Context.tt">
@@ -166,6 +164,8 @@
     </Content>
     <Content Include="PanelUzytkownikaInstytucja.aspx" />
     <Content Include="PanelUzytkownikaWOT.aspx" />
+    <Content Include="Rejestracja.aspx" />
+    <Content Include="RejestracjaWithMaster.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -201,6 +201,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="indexFromMaster.aspx.cs">
+      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="indexFromMaster.aspx.designer.cs">
+      <DependentUpon>indexFromMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Instytucja.cs">
       <DependentUpon>Model.tt</DependentUpon>
@@ -246,7 +253,20 @@
       <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\AccountService.cs" />
+    <Compile Include="Rejestracja.aspx.cs">
+      <DependentUpon>Rejestracja.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Rejestracja.aspx.designer.cs">
+      <DependentUpon>Rejestracja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RejestracjaWithMaster.aspx.cs">
+      <DependentUpon>RejestracjaWithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RejestracjaWithMaster.aspx.designer.cs">
+      <DependentUpon>RejestracjaWithMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Services\ZgloszenieService.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
