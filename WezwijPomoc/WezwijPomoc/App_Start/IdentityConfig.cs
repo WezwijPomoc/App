@@ -23,12 +23,12 @@ namespace WezwijPomoc
         {
             MessageService messageService = new MessageService();
             string html = messageService.CreateMessage(token);
-            var apiKey = "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";
+            var apiKey = "";
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("wezwijpomoc@ron.mil.pl", "WezwijPomoc WOT");
+            var from = new EmailAddress("pomocWOT@ron.mil.pl", "Pomoc WOT");
             var subject = "Email aktywacyjny";
             var to = new EmailAddress(user.Email, user.UserName);
-            var plainTextContent = "Wezwij Pomoc WOT";
+            var plainTextContent = "Pomoc WOT";
             var htmlContent = html;
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = client.SendEmailAsync(msg);
