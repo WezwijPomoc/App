@@ -96,12 +96,41 @@
                     <asp:Label ID="dzienLabel" runat="server" Text="Dzień"></asp:Label>
                 </asp:TableCell>
                 <asp:TableCell>
-                    <asp:TextBox ID="dzienTextBox" runat="server"></asp:TextBox>
+                    <asp:DropDownList ID="dzienDropDownList" runat="server">
+                        <asp:ListItem Selected="True" Text="1"></asp:ListItem>
+                        <asp:ListItem Text="2" ></asp:ListItem>
+                        <asp:ListItem Text="3" ></asp:ListItem>
+                        <asp:ListItem Text="4" ></asp:ListItem>
+                        <asp:ListItem Text="5" ></asp:ListItem>
+                        <asp:ListItem Text="6" ></asp:ListItem>
+                        <asp:ListItem Text="7" ></asp:ListItem>
+                        <asp:ListItem Text="8" ></asp:ListItem>
+                        <asp:ListItem Text="9" ></asp:ListItem>
+                        <asp:ListItem Text="10" ></asp:ListItem>
+                        <asp:ListItem Text="11" ></asp:ListItem>
+                        <asp:ListItem Text="12" ></asp:ListItem>
+                        <asp:ListItem Text="13" ></asp:ListItem>
+                        <asp:ListItem Text="14" ></asp:ListItem>
+                        <asp:ListItem Text="15" ></asp:ListItem>
+                        <asp:ListItem Text="16" ></asp:ListItem>
+                        <asp:ListItem Text="17" ></asp:ListItem>
+                        <asp:ListItem Text="18" ></asp:ListItem>
+                        <asp:ListItem Text="19" ></asp:ListItem>
+                        <asp:ListItem Text="20" ></asp:ListItem>
+                        <asp:ListItem Text="21" ></asp:ListItem>
+                        <asp:ListItem Text="22" ></asp:ListItem>
+                        <asp:ListItem Text="23" ></asp:ListItem>
+                        <asp:ListItem Text="24" ></asp:ListItem>
+                        <asp:ListItem Text="25" ></asp:ListItem>
+                        <asp:ListItem Text="26" ></asp:ListItem>
+                        <asp:ListItem Text="27" ></asp:ListItem>
+                        <asp:ListItem Text="28" ></asp:ListItem>
+                        <asp:ListItem Text="29" ></asp:ListItem>
+                        <asp:ListItem Text="30" ></asp:ListItem>
+                        <asp:ListItem Text="31" ></asp:ListItem>
+                    </asp:DropDownList>
                 </asp:TableCell>
-                  <asp:TableCell>
-                         <asp:RequiredFieldValidator ID="dzienRequiredFieldValidator" ControlToValidate="dzienTextBox" runat="server" ErrorMessage="*Pole wymagane" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
-                      <asp:RegularExpressionValidator ID="dzienRegularExpressionValidator" ValidationExpression="(^[1-9]{1}$|^[12][0-9]{1}$|3[01]{1}$)" ControlToValidate="dzienTextBox" runat="server" ErrorMessage="*Zły format" Display="Dynamic" ForeColor="Red"></asp:RegularExpressionValidator>
-                  </asp:TableCell>
+                 
             </asp:TableRow>
             <asp:TableRow>
                 <asp:TableCell>
@@ -157,7 +186,7 @@
                     </asp:TableCell>
                 <asp:TableCell>
                     <asp:RequiredFieldValidator ID="adresRequiredFieldValidator" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic" ControlToValidate="adresTextBox"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="adresRegularExpressionValidator" ValidationExpression="" runat="server" ErrorMessage="*Zły format (bez znakow specjalnych)" ForeColor="Red" Display="Dynamic" ControlToValidate="adresTextBox"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="adresRegularExpressionValidator" ValidationExpression="^[a-zA-Z]([a-zA-Z-]+\s)+\d{1,4}$" runat="server" ErrorMessage="*Zły format (bez znakow specjalnych)" ForeColor="Red" Display="Dynamic" ControlToValidate="adresTextBox"></asp:RegularExpressionValidator>
                 </asp:TableCell>
             </asp:TableRow>
             <asp:TableRow>
@@ -210,8 +239,7 @@
                     </asp:TableCell>
                  <asp:TableCell>
                          <asp:RequiredFieldValidator ID="emailRequiredFieldValidator" ControlToValidate="emailTextBox" runat="server" ErrorMessage="*Pole wymagane" ForeColor="Red" Display="Dynamic" ></asp:RequiredFieldValidator>
-                     <asp:RegularExpressionValidator ID="emailRegularExpressionValidator" ControlToValidate="emailTextBox" ValidationExpression=".+@[a-z0-9]+\.(pl|com)" runat="server" ErrorMessage="*Prawidłowy format xxx@xxx.pl/com"  ForeColor="Red" Display="Dynamic" ></asp:RegularExpressionValidator>
-                 </asp:TableCell>
+                </asp:TableCell>
             </asp:TableRow>
               <asp:TableRow>
                     <asp:TableCell ColumnSpan="3" HorizontalAlign="Center" VerticalAlign="Middle">
