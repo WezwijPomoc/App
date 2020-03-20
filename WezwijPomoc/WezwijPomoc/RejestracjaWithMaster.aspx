@@ -1,12 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Rejestracja.aspx.cs" Inherits="WezwijPomoc.Rejestracja" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-
-    <title></title>
-    <script runat="server">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="RejestracjaWithMaster.aspx.cs" Inherits="WezwijPomoc.RejestracjaWithMaster" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+     <script runat="server">
         protected void RadioButton_CheckedChanged(object sender, System.EventArgs e)
         {
             if (wotRadioButton.Checked == true)
@@ -51,18 +45,18 @@
           
         }
     </script>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="CPH1" runat="server">
+   
         <div>
             <asp:Table ID="Table1" runat="server" HorizontalAlign="Center">
-                <asp:TableRow>
+                <asp:TableRow >
                     <asp:TableCell HorizontalAlign="Center">
-                        <asp:Label ID="loginLabel" runat="server" Text="Login"></asp:Label>
+                        <asp:Label ID="loginLabel" runat="server" Text="Login" ></asp:Label>
 
                     </asp:TableCell>
                     <asp:TableCell>
-                        <asp:TextBox ID="loginTextBox" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="loginTextBox" CssClass="pola-teksty" runat="server"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
                         <asp:RequiredFieldValidator ID="loginRequiredFieldValidator" ControlToValidate="loginTextBox" runat="server" ErrorMessage="Pole wymagane" Text="*" ForeColor="Red" Display="Dynamic" ValidationGroup="dodajValidationGroup"></asp:RequiredFieldValidator>              
@@ -72,10 +66,10 @@
        
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell HorizontalAlign="Center">
+                    <asp:TableCell HorizontalAlign="Center" >
                         <asp:Label ID="hasloLabel" runat="server" Text="Haslo"></asp:Label>
                     </asp:TableCell>
-                    <asp:TableCell HorizontalAlign="Center">
+                    <asp:TableCell >
                         <asp:TextBox ID="hasloTextBox" runat="server" TextMode="Password"></asp:TextBox>
                     </asp:TableCell>
                       <asp:TableCell>
@@ -87,7 +81,7 @@
                     <asp:TableCell HorizontalAlign="Center">
                         <asp:Label ID="powtorzHasloLabel" runat="server" Text="Powtórz Hasło"></asp:Label>
                     </asp:TableCell>
-                    <asp:TableCell HorizontalAlign="Center">
+                    <asp:TableCell >
                         <asp:TextBox ID="powtorzHasloTextBox" runat="server" TextMode="Password"></asp:TextBox>
                     </asp:TableCell>
                     <asp:TableCell>
@@ -136,7 +130,7 @@
                         <asp:Label ID="emailLabel" runat="server" Text="Email"></asp:Label>
 
                     </asp:TableCell>
-                    <asp:TableCell HorizontalAlign="Center">
+                    <asp:TableCell >
                         <asp:TextBox ID="emailTextBox" runat="server"></asp:TextBox>
                     </asp:TableCell>
                       <asp:TableCell>
@@ -187,12 +181,12 @@
                             <asp:ListItem Text="Gmina 2"></asp:ListItem>
                             <asp:ListItem Text="Gmina 3"></asp:ListItem>
                         </asp:DropDownList>
-                        <asp:Button ID="dodajInstytucjaButton" runat="server" Text="Dodaj instytucję" OnClick="dodajInstytucjeButton_OnClick" CausesValidation="False" />
+                        <asp:Button ID="dodajInstytucjaButton" runat="server" Text="Dodaj instytucję" CssClass="button" OnClick="dodajInstytucjeButton_OnClick" CausesValidation="False" />
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
-                    <asp:TableCell ColumnSpan="2">
-                        <asp:Button ID="rejestracjaButton" runat="server" Text="Zarejestruj" ValidationGroup="dodajValidationGroup" />
+                    <asp:TableCell ColumnSpan="3">
+                        <asp:Button ID="rejestracjaButton" runat="server" Text="Zarejestruj" CssClass="button" ValidationGroup="dodajValidationGroup" />
                     </asp:TableCell>
                 </asp:TableRow>
                 <asp:TableRow>
@@ -204,7 +198,7 @@
         </div>
 
         <div>
-            <asp:Table ID="Table2" runat="server">
+            <asp:Table ID="Table2" runat="server" HorizontalAlign="Center">
                 
                 <asp:TableRow>
                  <asp:TableCell HorizontalAlign="Center">
@@ -353,6 +347,5 @@
                 </asp:TableRow>
             </asp:Table>
         </div>
-    </form>
-</body>
-</html>
+
+</asp:Content>

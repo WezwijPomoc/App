@@ -16,7 +16,8 @@ namespace WezwijPomoc
 
         protected void potwierdzButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/PanelUzytkownikaInstytucja.aspx");
+
+            Response.Redirect("~/indexFromMaster.aspx");
         }
     }
 }
