@@ -152,9 +152,9 @@
             <asp:TableRow>
                 <asp:TableCell ColumnSpan="2" HorizontalAlign="Center">
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                        <asp:ListItem>PILNE - realizacja do 8 h</asp:ListItem>
-                        <asp:ListItem>UMIARKOWANE - realizacja 8-16 h</asp:ListItem>
-                        <asp:ListItem Selected="True">MOŻE CZEKAĆ - do realizacji 16-48 h</asp:ListItem>
+                        <asp:ListItem Text = "PILNE - realizacja do 8 h" Value ="1"/>
+                        <asp:ListItem Text = "UMIARKOWANE - realizacja 8-16 h" Value ="2"/>
+                        <asp:ListItem Text = "MOŻE CZEKAĆ - do realizacji 16-48 h" Value ="3"/>
                     </asp:RadioButtonList>
                 </asp:TableCell>
             </asp:TableRow>
