@@ -64,7 +64,7 @@
 
                     </asp:TableCell>
        
-                </asp:TableRow>
+                </asp:TableRow> 
                 <asp:TableRow>
                     <asp:TableCell HorizontalAlign="Center" >
                         <asp:Label ID="hasloLabel" runat="server" Text="Haslo"></asp:Label>
