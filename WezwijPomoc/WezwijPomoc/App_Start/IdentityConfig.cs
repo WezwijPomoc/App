@@ -22,7 +22,8 @@ namespace WezwijPomoc
         public  Task SendConfirmationEmail(ApplicationUser user, string token)
         {
             MessageService messageService = new MessageService();
-            string html = messageService.CreateMessage(token);
+            string html = messageService.CreateMessage(token, user.Id);
+            
             var apiKey = "";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("pomocWOT@ron.mil.pl", "Pomoc WOT");

@@ -7,16 +7,14 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity.Owin;
 using WezwijPomoc.Models;
 using WezwijPomoc.Services;
-
 namespace WezwijPomoc
 {
-	public partial class LogowanieInstytucja : System.Web.UI.Page
-	{
-		protected  void Page_Load(object sender, EventArgs e)
-		{
-            
-		}
+    public partial class Login1 : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
+        }
         protected async void potwierdzButton_Click(object sender, EventArgs e)
         {
             var manager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();

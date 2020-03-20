@@ -15,6 +15,8 @@
     margin-right: 30px;
     background: radial-gradient(circle,#008DC9,white 95%);
     border-radius: 40px;
+    vertical-align:middle;
+    align-items:center;
 }
 .stopka {
     position: relative;
@@ -105,12 +107,31 @@ img{
     cursor: pointer;
     border-radius: 10px;
 }
+.button-krotkie {
+    width: 330%;
+    transition-duration: 0,6s;
+    background-color: white;
+    border: none;
+    color: #008DC9;
+    padding: 5px 14px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+}
 .button:hover{
     background-color:lightskyblue;
     color:white;
 }
 table{
     padding:14px 20px;
+    text-align:left;
+    vertical-align:central;
+    text-wrap:avoid;
+    max-width:80%;
 
 }
 .rekord{
@@ -127,7 +148,7 @@ table{
     background-repeat: no-repeat;
     padding: 4px 10px;
 }
-.listy1 {
+.listy {
     width: 100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -136,17 +157,18 @@ table{
     background-color: white;
     background-repeat: no-repeat;
     padding: 4px 10px;
+    
 }
-
-.listy2 {
-    width: 100%;
+.listy-krotkie {
+     
+    width: 200px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 10px;
     background-color: white;
     background-repeat: no-repeat;
-    padding: 4px 10px;
+    padding: 4px 10px;    
 }
 
 .teksty {

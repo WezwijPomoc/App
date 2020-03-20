@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Text.RegularExpressions;
-
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 namespace WezwijPomoc.Services
 {
     public class ZgloszenieService
@@ -32,6 +33,11 @@ namespace WezwijPomoc.Services
             }
             else
             {
+                var id = HttpContext.Current.User.Identity.GetUserId();
+
+                var manager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
+                var user = manager.FindById(id);
+               
                 using (Entities1 db = new Entities1())
                 {
                     Osoba osoba = new Osoba();
@@ -69,10 +75,11 @@ namespace WezwijPomoc.Services
                     zgloszenie.data_wygenerowania = DateTime.Now;
 
                     zgloszenie.id_osoby_do_kontaktu = osoba.id_osoby;
-                    
+
+                    zgloszenie.id_uzytkownika_zgl = 0;
                     zgloszenie.id_instytucji_przyjm = unit.id_instytucji;
                     zgloszenie.id_statusu = 1;
-                    zgloszenie.id_instytucji_zgl = 0;
+                    zgloszenie.id_instytucji_zgl =0;
                     db.Zgloszenie.Add(zgloszenie);
                     return true;
                 }

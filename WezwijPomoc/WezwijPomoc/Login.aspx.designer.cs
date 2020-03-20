@@ -10,16 +10,7 @@
 namespace WezwijPomoc {
     
     
-    public partial class LogowanieInstytucja {
-        
-        /// <summary>
-        /// Kontrolka form1.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class Login1 {
         
         /// <summary>
         /// Kontrolka Table2.
@@ -67,24 +58,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox loginTextBox;
         
         /// <summary>
-        /// Kontrolka loginRequiredFieldValidator.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator loginRequiredFieldValidator;
-        
-        /// <summary>
-        /// Kontrolka loginRegularExpressionValidator.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator loginRegularExpressionValidator;
-        
-        /// <summary>
         /// Kontrolka Label2.
         /// </summary>
         /// <remarks>
@@ -103,24 +76,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox hasloTextBox;
         
         /// <summary>
-        /// Kontrolka hasloRequiredFieldValidator.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator hasloRequiredFieldValidator;
-        
-        /// <summary>
-        /// Kontrolka hasloRegularExpressionValidator.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator hasloRegularExpressionValidator;
-        
-        /// <summary>
         /// Kontrolka potwierdzButton.
         /// </summary>
         /// <remarks>
@@ -128,23 +83,5 @@ namespace WezwijPomoc {
         /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button potwierdzButton;
-        
-        /// <summary>
-        /// Kontrolka rejestracjaButton.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rejestracjaButton;
-        
-        /// <summary>
-        /// Kontrolka ValidationSummary1.
-        /// </summary>
-        /// <remarks>
-        /// Pole generowane automatycznie.
-        /// By zmodyfikować deklaracje pola przenieś ją z pliku projektanta do pliku codebehind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }
