@@ -12,8 +12,13 @@ namespace WezwijPomoc
 {
 	public partial class LogowanieInstytucja : System.Web.UI.Page
 	{
-		protected async void Page_Load(object sender, EventArgs e)
+		protected  void Page_Load(object sender, EventArgs e)
 		{
+            
+		}
+
+        protected async void potwierdzButton_Click(object sender, EventArgs e)
+        {
             var manager = HttpContext.Current.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var user = await manager.FindByEmailAsync("maildospamu96@gmail.com");
 
@@ -23,12 +28,7 @@ namespace WezwijPomoc
 
             EmailService emailService = new EmailService();
 
-           await emailService.SendConfirmationEmail(user, token);
-		}
-
-        protected void potwierdzButton_Click(object sender, EventArgs e)
-        {
-
+            await emailService.SendConfirmationEmail(user, token);
             Response.Redirect("~/indexFromMaster.aspx");
         }
     }

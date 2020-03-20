@@ -16,8 +16,8 @@ namespace WezwijPomoc.Services
             string path = HttpContext.Current.Server.MapPath("~/Views/message.html");
 
             StringBuilder htmlmessage = new StringBuilder();
-            StringBuilder lineSB = new StringBuilder("<a href =\"https://wezwij-pomoc.azurewebsites.net/");
-            StringBuilder lineSB2 = new StringBuilder("<p style=\"margin: 0; \"><a href=\"https://wezwij-pomoc.azurewebsites.net/");
+            StringBuilder lineSB = new StringBuilder("<a href =\"https://pomocWOT.ron.mil.pl/Activation?token");
+            StringBuilder lineSB2 = new StringBuilder("<p style=\"margin: 0; \"><a href=\"https://pomocWOT.ron.mil.pl/Activation?token");
 
             foreach (string line in File.ReadLines(path))
             {
@@ -31,8 +31,8 @@ namespace WezwijPomoc.Services
                 else if(counter == 182)
                 {
                     lineSB2.Append(token);
-                    lineSB.Append(" target=\"_blank\">https://wezwij-pomoc.azurewebsites.net/");
-                    lineSB2.Append(token);
+                    lineSB2.Append(" target=\"_blank\">https://pomocWOT.ron.mil.pl/Activation?token");
+                   
                     lineSB2.Append("</a></p>");
                     htmlmessage.Append(lineSB2.ToString());
 
