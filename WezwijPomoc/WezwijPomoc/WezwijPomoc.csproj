@@ -146,9 +146,11 @@
   <ItemGroup>
     <Content Include="Global.asax" />
     <Content Include="img\help.gif" />
+    <Content Include="img\pobrane.png" />
+    <Content Include="img\WOT-logo.png" />
     <Content Include="index.aspx" />
-    <Content Include="LogowanieInstytucja.aspx" />
-    <Content Include="LogowanieWOT.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="fonts\MainPage.css" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -164,6 +166,7 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="WebForm1.aspx" />
     <Content Include="Weryfikacja.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -199,19 +202,12 @@
     <Compile Include="Instytucja.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="LogowanieInstytucja.aspx.cs">
-      <DependentUpon>LogowanieInstytucja.aspx</DependentUpon>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="LogowanieInstytucja.aspx.designer.cs">
-      <DependentUpon>LogowanieInstytucja.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="LogowanieWOT.aspx.cs">
-      <DependentUpon>LogowanieWOT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="LogowanieWOT.aspx.designer.cs">
-      <DependentUpon>LogowanieWOT.aspx</DependentUpon>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -248,12 +244,26 @@
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ZgloszenieService.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
     <Compile Include="Startup.cs" />
     <Compile Include="Status.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Uzytkownik.cs">
       <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Weryfikacja.aspx.cs">
       <DependentUpon>Weryfikacja.aspx</DependentUpon>
@@ -269,7 +279,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\" />
-    <Folder Include="fonts\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
@@ -281,6 +290,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Site.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
