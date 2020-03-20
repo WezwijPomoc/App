@@ -16,17 +16,22 @@ namespace WezwijPomoc
     {
         public Task SendAsync(IdentityMessage message)
         {
+            return Task.FromResult(0);
+        }
+
+        public  Task SendConfirmationEmail(ApplicationUser user, string token)
+        {
             MessageService messageService = new MessageService();
-            string html = messageService.CreateMessage();
-            var apiKey = Environment.GetEnvironmentVariable("NAME_OF_THE_ENVIRONMENT_VARIABLE_FOR_YOUR_SENDGRID_KEY");
+            string html = messageService.CreateMessage(token);
+            var apiKey = "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";
             var client = new SendGridClient(apiKey);
             var from = new EmailAddress("wezwijpomoc@ron.mil.pl", "WezwijPomoc WOT");
             var subject = "Email aktywacyjny";
-            var to = new EmailAddress("maildospamu96@gmail.com", "Example User");
-            var plainTextContent = html;
+            var to = new EmailAddress(user.Email, user.UserName);
+            var plainTextContent = "Wezwij Pomoc WOT";
             var htmlContent = html;
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
-            var response =  client.SendEmailAsync(msg);
+            var response = client.SendEmailAsync(msg);
             return Task.FromResult(0);
         }
     }

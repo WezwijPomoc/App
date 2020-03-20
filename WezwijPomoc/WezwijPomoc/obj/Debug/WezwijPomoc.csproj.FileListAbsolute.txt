@@ -236,7 +236,6 @@ C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsof
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.dll
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.dll
 C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Security.OAuth.dll
@@ -367,3 +366,7 @@ C:\Users\kursant CCNA\Documents\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\obj\Debu
 C:\Users\kursant CCNA\Documents\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.csproj.CopyComplete
 C:\Users\kursant CCNA\Documents\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.dll
 C:\Users\kursant CCNA\Documents\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\obj\Debug\WezwijPomoc.pdb
+C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\SendGrid.dll
+C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\SendGrid.pdb
+C:\Users\Radek\Source\Repos\WezwijPomoc\App\WezwijPomoc\WezwijPomoc\bin\SendGrid.xml

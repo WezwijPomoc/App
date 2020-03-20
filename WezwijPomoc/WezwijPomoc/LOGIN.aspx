@@ -95,7 +95,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
-            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
+           
         </div>
 
             </div>

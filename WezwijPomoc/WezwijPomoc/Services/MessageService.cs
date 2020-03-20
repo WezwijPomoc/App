@@ -9,11 +9,12 @@ namespace WezwijPomoc.Services
 {
     public class MessageService
     {
-        public string CreateMessage()
+        public string CreateMessage(string token)
         {
             int counter = 0;
-            string path = "~/Views/message.html";
-            string token="";
+            
+            string path = HttpContext.Current.Server.MapPath("~/Views/message.html");
+
             StringBuilder htmlmessage = new StringBuilder();
             StringBuilder lineSB = new StringBuilder("<a href =\"https://wezwij-pomoc.azurewebsites.net/");
             StringBuilder lineSB2 = new StringBuilder("<p style=\"margin: 0; \"><a href=\"https://wezwij-pomoc.azurewebsites.net/");
