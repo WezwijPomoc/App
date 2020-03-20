@@ -14,6 +14,7 @@ namespace WezwijPomoc
     {
         public Task SendAsync(IdentityMessage message)
         {
+            
             // Dołącz tutaj usługę poczty e-mail, aby wysłać wiadomość e-mail.
             return Task.FromResult(0);
         }

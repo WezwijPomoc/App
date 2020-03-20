@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WezwijPomoc.LogowanieInstytucja" %>
+﻿<%@ Page Async="true" Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="WezwijPomoc.LogowanieInstytucja" %>
 
 <!DOCTYPE html>
 
@@ -77,6 +77,7 @@
                     </asp:TableCell>
                 </asp:TableRow>
             </asp:Table>
+            <asp:ValidationSummary ID="ValidationSummary1" runat="server" />
         </div>
 
             </div>
