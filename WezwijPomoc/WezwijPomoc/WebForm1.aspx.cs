@@ -12,8 +12,8 @@ namespace WezwijPomoc
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            var mp = Master as Site;
-            mp.LoggedUser = "Rafał Twarowski";
+           // var mp = Master as Site;
+            //mp.LoggedUser = "Rafał Twarowski";
         }
     }
 }

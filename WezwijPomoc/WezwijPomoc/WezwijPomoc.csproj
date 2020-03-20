@@ -148,10 +148,11 @@
     <Content Include="img\help.gif" />
     <Content Include="img\pobrane.png" />
     <Content Include="img\WOT-logo.png" />
-    <Content Include="index.aspx" />
-    <Content Include="indexFromMaster.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="indexNoMaster.aspx" />
+    <Content Include="indexWithMaster.aspx" />
+    <Content Include="LoginNoMaster.aspx" />
     <Content Include="fonts\MainPage.css" />
+    <Content Include="LoginWithMaster.aspx" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -162,9 +163,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="PanelUzytkownikaInstytucja.aspx" />
-    <Content Include="PanelUzytkownikaWOT.aspx" />
-    <Content Include="Rejestracja.aspx" />
+    <Content Include="PanelUzytkownikaWithMaster.aspx" />
+    <Content Include="RejestracjaNoMaster.aspx" />
     <Content Include="RejestracjaWithMaster.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -195,29 +195,36 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="indexNoMaster.aspx.cs">
+      <DependentUpon>indexNoMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="indexNoMaster.aspx.designer.cs">
+      <DependentUpon>indexNoMaster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="indexFromMaster.aspx.cs">
-      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+    <Compile Include="indexWithMaster.aspx.cs">
+      <DependentUpon>indexWithMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="indexFromMaster.aspx.designer.cs">
-      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+    <Compile Include="indexWithMaster.aspx.designer.cs">
+      <DependentUpon>indexWithMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Instytucja.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginNoMaster.aspx.cs">
+      <DependentUpon>LoginNoMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="LoginNoMaster.aspx.designer.cs">
+      <DependentUpon>LoginNoMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWithMaster.aspx.cs">
+      <DependentUpon>LoginWithMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginWithMaster.aspx.designer.cs">
+      <DependentUpon>LoginWithMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Model.Context.cs">
       <AutoGen>True</AutoGen>
@@ -238,27 +245,20 @@
     <Compile Include="Osoba.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="PanelUzytkownikaInstytucja.aspx.cs">
-      <DependentUpon>PanelUzytkownikaInstytucja.aspx</DependentUpon>
+    <Compile Include="PanelUzytkownikaWithMaster.aspx.cs">
+      <DependentUpon>PanelUzytkownikaWithMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PanelUzytkownikaInstytucja.aspx.designer.cs">
-      <DependentUpon>PanelUzytkownikaInstytucja.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PanelUzytkownikaWOT.aspx.cs">
-      <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PanelUzytkownikaWOT.aspx.designer.cs">
-      <DependentUpon>PanelUzytkownikaWOT.aspx</DependentUpon>
+    <Compile Include="PanelUzytkownikaWithMaster.aspx.designer.cs">
+      <DependentUpon>PanelUzytkownikaWithMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rejestracja.aspx.cs">
-      <DependentUpon>Rejestracja.aspx</DependentUpon>
+    <Compile Include="RejestracjaNoMaster.aspx.cs">
+      <DependentUpon>RejestracjaNoMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Rejestracja.aspx.designer.cs">
-      <DependentUpon>Rejestracja.aspx</DependentUpon>
+    <Compile Include="RejestracjaNoMaster.aspx.designer.cs">
+      <DependentUpon>RejestracjaNoMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="RejestracjaWithMaster.aspx.cs">
       <DependentUpon>RejestracjaWithMaster.aspx</DependentUpon>

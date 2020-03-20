@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WezwijPomoc
 {
-    public partial class PanelUzytkownikaInstytucja : System.Web.UI.Page
+    public partial class PanelUzytkownika : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

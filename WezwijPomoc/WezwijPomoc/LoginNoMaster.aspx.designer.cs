@@ -67,24 +67,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox loginTextBox;
         
         /// <summary>
-        /// loginRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator loginRequiredFieldValidator;
-        
-        /// <summary>
-        /// loginRegularExpressionValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator loginRegularExpressionValidator;
-        
-        /// <summary>
         /// Label2 control.
         /// </summary>
         /// <remarks>
@@ -103,24 +85,6 @@ namespace WezwijPomoc {
         protected global::System.Web.UI.WebControls.TextBox hasloTextBox;
         
         /// <summary>
-        /// hasloRequiredFieldValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator hasloRequiredFieldValidator;
-        
-        /// <summary>
-        /// hasloRegularExpressionValidator control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RegularExpressionValidator hasloRegularExpressionValidator;
-        
-        /// <summary>
         /// potwierdzButton control.
         /// </summary>
         /// <remarks>
@@ -128,23 +92,5 @@ namespace WezwijPomoc {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button potwierdzButton;
-        
-        /// <summary>
-        /// rejestracjaButton control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button rejestracjaButton;
-        
-        /// <summary>
-        /// ValidationSummary1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary ValidationSummary1;
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="Rejestracja.aspx.cs" Inherits="WezwijPomoc.Rejestracja" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  CodeBehind="RejestracjaNoMaster.aspx.cs" Inherits="WezwijPomoc.Rejestracja" %>
 
 <!DOCTYPE html>
 

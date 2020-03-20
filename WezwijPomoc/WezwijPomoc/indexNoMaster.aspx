@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true"  Async="true" CodeBehind="index.aspx.cs" Inherits="WezwijPomoc.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  Async="true" CodeBehind="indexNoMaster.aspx.cs" Inherits="WezwijPomoc.index" %>
 <%@ Import Namespace="WezwijPomoc" %>
 <%@ Import Namespace="System.Diagnostics" %>
 <!DOCTYPE html>
