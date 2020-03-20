@@ -10,7 +10,7 @@
 namespace WezwijPomoc {
     
     
-    public partial class indexFromMaster {
+    public partial class IndexWithMaster {
         
         /// <summary>
         /// Kontrolka Table2.

@@ -158,7 +158,7 @@
     <Content Include="img\help.gif" />
     <Content Include="img\pobrane.png" />
     <Content Include="img\WOT-logo.png" />
-    <Content Include="indexFromMaster.aspx" />
+    <Content Include="IndexWithMaster.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -199,12 +199,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="indexFromMaster.aspx.cs">
-      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+    <Compile Include="IndexWithMaster.aspx.cs">
+      <DependentUpon>IndexWithMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="indexFromMaster.aspx.designer.cs">
-      <DependentUpon>indexFromMaster.aspx</DependentUpon>
+    <Compile Include="IndexWithMaster.aspx.designer.cs">
+      <DependentUpon>IndexWithMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Instytucja.cs">
       <DependentUpon>Model.tt</DependentUpon>

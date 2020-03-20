@@ -1,10 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="indexWithMaster.aspx.cs" Inherits="WezwijPomoc.indexFromMaster" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="IndexWithMaster.aspx.cs" Inherits="WezwijPomoc.IndexWithMaster" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CPH1" runat="server">
-
-    <!-- nagłówek -->
+     <!-- nagłówek -->
     <div>
         <asp:Table ID="Table2" CssClass="tabelka" runat="server" HorizontalAlign="Center">
             <asp:TableRow>
@@ -337,10 +335,5 @@
             </asp:TableRow>
         </asp:Table>
     </div>
-
-
-
-
-
 
 </asp:Content>
