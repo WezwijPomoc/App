@@ -7,14 +7,31 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
 using WezwijPomoc.Models;
-
+using SendGrid;
+using SendGrid.Helpers.Mail;
+using WezwijPomoc.Services;
 namespace WezwijPomoc
 {
     public class EmailService : IIdentityMessageService
     {
         public Task SendAsync(IdentityMessage message)
         {
-            // Dołącz tutaj usługę poczty e-mail, aby wysłać wiadomość e-mail.
+            return Task.FromResult(0);
+        }
+
+        public  Task SendConfirmationEmail(ApplicationUser user, string token)
+        {
+            MessageService messageService = new MessageService();
+            string html = messageService.CreateMessage(token);
+            var apiKey = "";
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("pomocWOT@ron.mil.pl", "Pomoc WOT");
+            var subject = "Email aktywacyjny";
+            var to = new EmailAddress(user.Email, user.UserName);
+            var plainTextContent = "Pomoc WOT";
+            var htmlContent = html;
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = client.SendEmailAsync(msg);
             return Task.FromResult(0);
         }
     }
